@@ -1,4 +1,4 @@
-import "./css/style.css"
+
 
 // lines
 const lines = document.querySelector("#lines");
@@ -86,11 +86,11 @@ function pageClick() {
         e.preventDefault();
         const dataName = elem.getAttribute('data-name');
         console.log(dataName);
-        document.getElementById("cover").classList.add("cover-right");
+        // document.getElementById("cover").classList.add("cover-right");
         setTimeout(() => {
           window.location.href =
             "/pages/" + dataName + ".html";
-        }, 2000);
+        }, 0);
       });
     });
   }
