@@ -5,6 +5,7 @@
     position: absolute;
     overflow: hidden;
     background: #161615;
+    z-index: 1;
 }
 
 .load_center {
@@ -49,6 +50,7 @@
     transform: translate(-50%, -55%);
     stroke-dasharray: 1500;    
     stroke-dashoffset: 1500;
+    opacity: 0;
 }
 .line3 {
     position: absolute;
@@ -67,4 +69,5 @@
     transform: translate(-50%, -55%);
     stroke-dasharray: 1500;    
     stroke-dashoffset: 1500;
+    opacity: 0;
 }

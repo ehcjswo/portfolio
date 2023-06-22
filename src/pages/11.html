@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1번</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+            background-color: #151516;
+        }
+        #main {
+            width: 100%;
+            height: 100%;
+        }
+        .Loop {
+            position: relative;
+            height: 100%;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        /* .Loop::-webkit-scrollbar {
+            display: none;
+        } */
+
+        /* Firefox */
+        .Loop {
+            scrollbar-width: none;
+        }
+
+        section {
+            position: relative;
+            height: 30%;
+        }
+
+        .back {
+            position: absolute;
+            padding: 10px;
+            right: 10px;
+            top: 0;
+            z-index: 10;
+        }
+
+        h1 {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        font-size: 80px;
+        letter-spacing: 5px;
+        color: #fff;
+        text-transform: uppercase;
+        }
+        .blur-effect {
+            filter: blur(5px);
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="back"><a href="#">home</a></div>
+        <main class="Loop js-loop">
+            <section class="effect">
+                <h1>quiz effect</h1>
+            </section>
+            <section class="effect">
+                <h1>slider effect</h1>
+            </section>
+            <section class="effect">
+                <h1>parallax effect</h1>
+            </section>
+            <section class="effect">
+                <h1>search effect</h1>
+            </section>
+            <section class="effect">
+                <h1>game effect</h1>
+            </section>
+            <section class="effect">
+                <h1>mouse effect</h1>
+            </section>
+            
+            <!--
+            These blocks are the same as the first blocks to get that looping illusion going.
+            You need to add clones to fill out a full viewport height.
+            -->
+            <section class="effect is-clone">
+                <h1>quiz effect</h1>
+            </section>
+            <section class="effect is-clone">
+                <h1>slider effect</h1>
+            </section>
+            <section class="effect is-clone">
+              <h1>parallax effect</h1>
+            </section>
+            <section class="effect is-clone">
+                <h1>search effect</h1>
+            </section>
+            
+        </main>
+    </div>
+    
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
+<script src="../script/scroll.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+const h1Elements = document.querySelectorAll('.effect');
+
+h1Elements.forEach((e) => {
+  gsap.to(effect, {
+    scrollTrigger: {
+      trigger: '.effect',
+      start: 'top 40%',
+      end: 'bottom 50%',
+      scrub: 1,
+      toggleClass: 'blur-effect',
+      markers: true,
+    }
+  });
+});
+
+</script>
+</html>

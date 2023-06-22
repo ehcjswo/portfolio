@@ -10,12 +10,12 @@ const line3_full = document.querySelector(".line3_full");
 
 
 // 초기 상태 설정
-gsap.set(lines, {zIndex:1});
+gsap.set(lines, {zIndex:5});
 gsap.set(line2, {height:"28.1vw"});
 gsap.set(line2_full, {height:"28.1vw", opacity:0});
 gsap.set(line3, {height:"28.1vw"});
 gsap.set(line3_full, {height:"28.1vw", opacity:0});
-gsap.set(project, {opacity:1 ,zIndex: 1});
+gsap.set(project, {opacity:1 ,zIndex: 3});
 
 // 선 그리기
 gsap.to(project, {delay:2.0, duration: 0.1, opacity:0 ,} )
@@ -81,20 +81,20 @@ function loadImage(src) {
 
 //page transition
 function pageClick() {
-    document.querySelectorAll(".main__list li a").forEach((elem) => {
-      elem.addEventListener("click", (e) => {
-        e.preventDefault();
-        const dataName = elem.getAttribute('data-name');
-        console.log(dataName);
-        // document.getElementById("cover").classList.add("cover-right");
-        setTimeout(() => {
-          window.location.href =
-            "/pages/" + dataName + ".html";
-        }, 0);
-      });
+  document.querySelectorAll(".main__list li a").forEach((elem) => {
+    elem.addEventListener("click", (e) => {
+      e.preventDefault();
+      const dataName = elem.getAttribute('data-name');
+      console.log(dataName);
+      // document.getElementById("cover").classList.add("cover-right");
+      setTimeout(() => {
+        window.location.href =
+          "/pages/" + dataName + ".html";
+      }, 0);
     });
-  }
-  pageClick();
+  });
+}
+pageClick();
 
 
 
