@@ -525,6 +525,7 @@ function anima() {
   var tl2 = new TimelineMax({zIndex:15, opacity: 0,delay: 0, paused: false });
   wrapper.style.display = "block";
   wrapper.style.pointerEvents = "all";
+  wrapper.style.zIndex = "100"
 
   tl2.set(polygons, {zIndex:15,opacity: 0, scale:1 ,rotation: 60, x: 20, y: -10 });
 
@@ -538,6 +539,7 @@ function anima2() {
   var tl3 = new TimelineMax({zIndex:15, opacity: 0,delay: 0, paused: false });
   wrapper.style.display = "block";
   wrapper.style.pointerEvents = "all";
+  wrapper.style.zIndex = "100"
 
   tl3.set(polygons, {zIndex:15,opacity: 1, scale:1.09 ,rotation: 0, x: 0, y: 0 });
 
@@ -545,6 +547,10 @@ function anima2() {
   tl3.staggerTo(polygons, 0.4, { rotation: 60, x: 20, y: -10 });
   tl3.to(polygons, 0.5, { opacity: 0, ease: Elastic.easeInOut, stagger: { amount: 0.2, from: "end" } });
   tl3.play();
+  setInterval(()=>{
+
+    wrapper.style.zIndex = "0"
+  },2500)
 }
 anima2();
 
