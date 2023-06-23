@@ -86,15 +86,68 @@ function pageClick() {
       e.preventDefault();
       const dataName = elem.getAttribute('data-name');
       console.log(dataName);
+      anima();
       // document.getElementById("cover").classList.add("cover-right");
       setTimeout(() => {
         window.location.href =
           "/pages/" + dataName + ".html";
-      }, 0);
+      }, 4000);
     });
   });
 }
 pageClick();
+
+
+var polygons = document.querySelectorAll("#hexs polygon");
+var restartPolygon = document.getElementById("restartPolygon");
+var restartText = document.getElementById("restartText");
+var redDot = document.getElementById("redDot");
+var startText = document.getElementById("startText");
+var center = 85;
+var polygonCenter = polygons[center];
+polygonCenter.classList.add("center");
+var polygonsRows = [];
+var j = -1;
+var desetica = 1;
+for (var i = 1; i < 10; i++) {
+    window['polygons' + i] = [];
+    polygonsRows.push(window['polygons' + i])
+}
+for (var i = 0; i < polygons.length; i++) {
+    j++;
+    if (j < 19) {
+        window['polygons' + desetica].push(polygons[i]);
+        if (j === 18) {
+            j = -1;
+            desetica++;
+        }
+    }
+}
+
+//GSAP Timeline
+var tl = new TimelineMax({ opacity: 0,delay: 0, paused: false });
+
+//do nothing
+function anima(){
+    tl.set(polygons, { scale:1 , opacity: 0,rotation: 60, x: 20, y: -10 });
+
+    tl.to(polygons, 0.1, { opacity: 1, ease: Elastic.easeInOut.config(1, 0.3), stagger: { amount: 0.2, from: "center" } });
+    tl.to(polygons[center], 0.1, { opacity: 0.7, delay: 0.1 });
+    tl.to(polygons[center - 19], 0.05, { opacity: 0.7, delay: 0.1 });
+    tl.to(polygons[center - 20], 0.05, { opacity: 0.7, delay: 0.01 });
+    tl.to(polygons[center - 1], 0.05, { opacity: 0.7, delay: 0.01 });
+    tl.to(polygons[center + 18], 0.05, { opacity: 0.7, delay: 0.01 });
+    tl.to(polygons[center + 19], 0.05, { opacity: 0.7, delay: 0.01 });
+    tl.to(polygons[center + 1], 0.05, { opacity: 0.7, delay: 0.01 });
+    tl.to(polygons, 0.5, { rotation: 0, x: 0, y: 0, delay: 0.1 });
+    tl.staggerTo(polygons, 1, { scale: 1.06, ease: Elastic.easeInOut.config(1, 0.3), stagger: { amount: 0.15, from: "center" } });
+    tl.to(polygons, 0.5, { opacity: 0, ease: Elastic.easeInOut, stagger: { amount: 0.2, from: "end" } });
+    tl.play();
+}
+
+document.querySelector('#ani').addEventListener('click', ()=>{
+    anima();
+})
 
 
 

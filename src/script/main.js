@@ -79,6 +79,62 @@ function loadImage(src) {
     });
 
 
+
+
+
+var polygons = document.querySelectorAll("#hexs polygon");
+var restartPolygon = document.getElementById("restartPolygon");
+var restartText = document.getElementById("restartText");
+var redDot = document.getElementById("redDot");
+var startText = document.getElementById("startText");
+var center = 85;
+var polygonCenter = polygons[center];
+var wrapper = document.querySelector("#wrapper");
+polygonCenter.classList.add("center");
+
+var polygonsRows = [];
+var j = -1;
+var desetica = 1;
+for (var i = 1; i < 10; i++) {
+    window['polygons' + i] = [];
+    polygonsRows.push(window['polygons' + i])
+}
+for (var i = 0; i < polygons.length; i++) {
+    j++;
+    if (j < 19) {
+        window['polygons' + desetica].push(polygons[i]);
+        if (j === 18) {
+            j = -1;
+            desetica++;
+        }
+    }
+}
+
+//GSAP Timeline
+
+//do nothing
+var tl = new TimelineMax({zIndex:-1, opacity: 0,delay: 0, paused: false });
+function anima() {
+  wrapper.style.display = "block";
+  wrapper.style.pointerEvents = "all";
+
+  tl.set(polygons, {zIndex:2,opacity: 0, scale:1 ,rotation: 60, x: 20, y: -10 });
+
+  tl.to(polygons, 1, {scale:0.9, opacity: 1, ease: Elastic.easeInOut, stagger: { amount: 0.4, from: "start" } });
+  // tl.to(polygons[center], 0.1, { fill:"white", delay: 0.1 });
+  // tl.to(polygons[center - 19], 0.05, { fill:"white", delay: 0.1 });
+  // tl.to(polygons[center - 20], 0.05, { fill:"white", delay: 0.01 });
+  // tl.to(polygons[center - 1], 0.05, { fill:"white", delay: 0.01 });
+  // tl.to(polygons[center + 18], 0.05, { fill:"white", delay: 0.01 });
+  // tl.to(polygons[center + 19], 0.05, { fill:"white", delay: 0.01 });
+  // tl.to(polygons[center + 1], 0.05, { fill:"white", delay: 0.01 });
+  tl.staggerTo(polygons, 0.4, { rotation: 0, x: 0, y: 0 });
+  tl.to(polygons, 1, {opacity: 1, scale: 1.09, ease: Elastic.easeInOut, stagger: { amount: 0.15, from: "center" } },"1");
+  // tl.to(polygons, 0.5, { opacity: 0, ease: Elastic.easeInOut, stagger: { amount: 0.2, from: "end" } });
+  tl.play();
+}
+// anima();
+
 //page transition
 function pageClick() {
   document.querySelectorAll(".main__list li a").forEach((elem) => {
@@ -89,12 +145,15 @@ function pageClick() {
       // document.getElementById("cover").classList.add("cover-right");
       setTimeout(() => {
         window.location.href =
-          "/pages/" + dataName + ".html";
-      }, 0);
+        "/pages/" + dataName + ".html";
+      }, 2000);
+      anima();
     });
   });
 }
 pageClick();
+
+
 
 
 
