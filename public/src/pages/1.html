@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1번</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html,
+        body {
+            /* height: 100%; */
+            /* overflow: hidden; */
+            background-color: #151516;
+        }
+        #main {
+          position: relative;
+          width: 100%;
+          height: 100%;
+        }
+        .back {
+            position: fixed;
+            padding: 10px;
+            right: 10px;
+            top: 0;
+            z-index: 10;
+        }
+        .container {
+            height: fit-content;
+            width: 80%;
+            margin: auto;
+        }
+
+        a {
+            min-height: 60px;
+            font-size: 110px;
+            font-weight:300;
+            display: block;
+            color: #fff;
+        }
+
+        .recipe-link{
+            opacity:0;
+        }
+    </style>
+</head>
+<body>
+  <div id="main">
+    <div class="back"><a href="#">home</a></div>
+
+    <div class="container">
+        <a class="recipe-link">1</a>
+        <a class="recipe-link">2</a>
+        <a class="recipe-link">3</a>
+        <a class="recipe-link">4</a>
+        <a class="recipe-link">5</a>
+        <a class="recipe-link">6</a>
+        <a class="recipe-link">1</a>
+        <a class="recipe-link">2</a>
+      </div>
+  </div>
+    
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script> -->
+<!-- <script src="../script/scroll.js"></script> -->
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+ScrollTrigger.create({
+  start: 0,
+  end: "max",
+  onLeave: self => {
+    self.scroll(1);
+    ScrollTrigger.update();
+  },
+  onLeaveBack: self => {
+    self.scroll(ScrollTrigger.maxScroll(window)-1);
+    ScrollTrigger.update();
+  }
+});
+
+// Change opacity of link on scroll
+
+select = (e) => document.querySelector(e);
+selectAll = (e) => document.querySelectorAll(e);
+
+const recipe = selectAll(".recipe-link");
+
+recipe.forEach((recipe, i) => {
+
+  gsap.to(recipe, {
+      opacity: 1,
+      repeat: 1,
+      yoyo: true,
+      ease: "none",
+      scrollTrigger: {
+        trigger: recipe,
+        start: "center bottom",
+        end:"center top",
+        markers:true,
+        scrub:true,
+      }
+    }
+  );
+});
+
+</script>
+</html>
