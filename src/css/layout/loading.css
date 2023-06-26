@@ -1,0 +1,22 @@
+.loading {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* background-color: #fff; */
+    top: 0;
+    left: 0;
+    z-index: 100;
+    color: #fff;
+}
+.split {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10vw;
+    line-height: 1;
+}
+.split span {
+    display: inline-block;
+}
+
