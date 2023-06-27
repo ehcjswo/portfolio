@@ -2,11 +2,9 @@
 
 /* setting */
 @import "setting/base.css";
+@import "setting/fonts.css";
 
 
 /* layout */
 @import "layout/loading.css";
 @import "layout/main.css";
-
-/* fonts */
-@import "fonts/fonts.css";

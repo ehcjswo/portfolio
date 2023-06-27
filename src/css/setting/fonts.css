@@ -77,6 +77,70 @@
         url('https://cdn.jsdelivr.net/gh/webfontworld/TheJamsil/TheJamsil-ExtraBold.ttf') format("truetype");
     font-display: swap;
 }
+@font-face {
+    font-family: 'TungstenCompressed';
+    font-weight: 900;
+    font-style: normal;
+    src: url('../fonts/TungstenCompressed-Black.woff') format('woff'),
+        url('../fonts/TungstenCompressed-Black.woff2') format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'TungstenCompressed';
+    font-weight: 700;
+    font-style: normal;
+    src: url('../fonts/TungstenCompressed-Bold.woff') format('woff'),
+        url('../fonts/TungstenCompressed-Bold.woff2') format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'TungstenCompressed';
+    font-weight: 600;
+    font-style: normal;
+    src: url('../fonts/TungstenCompressed-Book.woff') format('woff'),
+        url('../fonts/TungstenCompressed-Book.woff2') format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'TungstenCompressed';
+    font-weight: 300;
+    font-style: normal;
+    src: url('../fonts/TungstenCompressed-Light.woff') format('woff'),
+        url('../fonts/TungstenCompressed-Light.woff2') format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'TungstenCompressed';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../fonts/TungstenCompressed-Medium.woff') format('woff'),
+        url('../fonts/TungstenCompressed-Medium.woff2') format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'TungstenCompressed';
+    font-weight: 800;
+    font-style: normal;
+    src: url('../fonts/TungstenCompressed-Semibld.woff') format('woff'),
+        url('../fonts/TungstenCompressed-Semibld.woff2') format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'TungstenCompressed';
+    font-weight: 300;
+    font-style: normal;
+    src: url('../fonts/TungstenCompressed-Thin.woff') format('woff'),
+        url('../fonts/TungstenCompressed-Thin.woff2') format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'TungstenCompressed';
+    font-weight: 100;
+    font-style: normal;
+    src: url('../fonts/TungstenCompressed-XLight.woff') format('woff'),
+        url('../fonts/TungstenCompressed-XLight.woff2') format('woff2');
+    font-display: swap;
+}
 
 .BebasNeue {
     font-family: 'Bebas Neue', 'sans-serif';
