@@ -5,21 +5,10 @@ function pageClick() {
       e.preventDefault();
       const hrefName = el.getAttribute("href");
       // document.querySelector("body").classList.add("pageAnimation");
-      let t2 = gsap.timeline();
-      t2.to("#section1 .img", { autoAlpha: 0 });
-      t2.to("#section1 .title", { autoAlpha: 0 });
-      t2.to(".loading .split span", {
-        y: 0,
-        duration: 1.4,
-        ease: "expo.out",
-        stagger: {
-          amount: 0.4,
-          from: "center",
-        },
-      });
+      pageOut();
       setTimeout(() => {
         window.location.href = hrefName;
-      }, 4000);
+      }, 4500);
     });
   });
 }
@@ -33,8 +22,6 @@ document.querySelectorAll(".split").forEach((text) => {
   text.innerHTML = "<span aria-hidden='true'>" + splitWrap + "</span>";
   text.setAttribute("aria-label", text.innerText);
 });
-
-
 
 // 로딩
 
@@ -62,19 +49,21 @@ const line2_full = document.querySelector(".line2_full");
 const line3 = document.querySelector(".line3");
 const line3_full = document.querySelector(".line3_full");
 
+const box1 = document.querySelector(".blackBox1");
+const box2 = document.querySelector(".blackBox2");
+
+
+// 처음 로딩
 function loading(){
   // 초기 상태 설정
-  gsap.set(load, {opacity: 1})
+  gsap.set(".split", {opacity:1})
+  gsap.set(box1, {opacity: 0});
+  gsap.set(box2, {opacity: 0});
+  gsap.set(load, {opacity: 1});
   gsap.set(l6, {attr: {x2: 1500, y2: 0}}); 
   gsap.set(l7, {attr: {x2: 1920, y2: 0}}); 
   gsap.set(l10, {attr: {x2: 1500, y2: 0 }});
-  
-  // 선 그리기
-  gsap.to(l10, 0.4, {attr: {x1: 0, x2: 1500, y1: 1500}});
-  gsap.to(l7, 0.3, {attr: {x1: 0, x2: 1920, y1: 1920}, delay:0.08}); 
-  gsap.to(l6, 0.2, {attr: {x1: 0, x2:1500, y1:1500},delay:0.16}) 
-  
-  // 초기 상태 설정
+
   gsap.set(l1, {attr: {x2: 0, y2: 0}}); 
   gsap.set(l2, {attr: {x2: 0, y2: 0}}); 
   gsap.set(l3, {attr: {x2: 0, y2: 0}}); 
@@ -85,8 +74,12 @@ function loading(){
   gsap.set(l11, {attr: {x1:0, x2:0}});
   gsap.set(l12, {attr: {y1:0, y2:0}});
   gsap.set(circle, {autoAlpha:0});
-
+  
   // 선 그리기
+  gsap.to(l10, 0.4, {attr: {x1: 0, x2: 1500, y1: 1500}});
+  gsap.to(l7, 0.3, {attr: {x1: 0, x2: 1920, y1: 1920}, delay:0.08}); 
+  gsap.to(l6, 0.2, {attr: {x1: 0, x2:1500, y1:1500},delay:0.16}) 
+  
   gsap.to(l1, 0.2, {attr: {x2:1500, y2:1500}, delay:0.8});
   gsap.to(l2, {attr: {x2:1740, y2:1740}, delay:1.05});
   gsap.to(l3, {attr: {x2:1860, y2:1860}, delay:1.1});
@@ -97,6 +90,7 @@ function loading(){
   gsap.to(l11, {attr: {x1:0, x2:1920}, delay:1.15});
   gsap.to(l12, {attr: {y1:0, y2:1920}, delay:1.1});
   gsap.to(circle, {autoAlpha:1, delay:1.25});
+
 
   gsap.to(l1, 1, {delay:4, opacity:0.1});
   gsap.to(l2, 1, {delay:4, opacity:0.1});
@@ -129,9 +123,6 @@ function loading(){
   gsap.to(line3_full, { delay:3.5, duration: 2, opacity:0,  ease: "power4.inOut", strokeDashoffset: 0});
 
   gsap.set(".loading .split span", { autoAlpha: 0, y: 200 });
-  gsap.set("#section1 .img", {  });
-  gsap.set("#section1 .title", {  });
-
   setTimeout(() => {
     let tl = gsap.timeline();
     tl.to(".loading .split span", {
@@ -158,23 +149,51 @@ function loading(){
     });
     tl.to("#section1 .title", {
       opacity:1,
-      
     });
     tl.to("#section1 .img", {
       opacity:1,
-      
     });
   }, 2000);
+}
 
+// 페이지 이동시
+function pageOut(){
+  let t2 = gsap.timeline();
   
+  t2.to("#section1 .img", { autoAlpha: 0 });
+  t2.to("#section1 .title", { autoAlpha: 0 });
+  t2.to(".loading .split span", {
+    y: 0,
+    duration: 1.4,
+    ease: "expo.out",
+    stagger: {
+      amount: 0.4,
+      from: "center",
+    },
+  });
+  t2.set(box1, {opacity:1, y:-200});
+  t2.set(box2, {opacity:1, y:200});
+  t2.to(box1, {y:0, ease:"expo.out"}, "e");
+  t2.to(box2, {y:0, ease:"expo.out"}, "e");
+  gsap.to(l1, 1, {opacity:0});
+  gsap.to(l2, 1, {opacity:0});
+  gsap.to(l3, 1, {opacity:0});
+  gsap.to(l4, 1, {opacity:0});
+  gsap.to(l5, 1, {opacity:0});
+  gsap.to(l6, 1, {opacity:0});
+  gsap.to(l7, 1, {opacity:0});
+  gsap.to(l8, 1, {opacity:0});
+  gsap.to(l9, 1, {opacity:0});
+  gsap.to(l10, 1, {opacity:0});
+  gsap.to(l11, 1, {opacity:0});
+  gsap.to(l12, 1, {opacity:0});
+  gsap.to(circle, 1, {opacity:0});
 }
 
 // 이미지 변경
 document.querySelectorAll(".page-click").forEach((e, i) => {
   e.addEventListener("mouseover", (over) => {
-    document.querySelector(
-      "#section1 .img"
-    ).style.backgroundImage = `url("/images/bgImg_0${i + 1}.jpg")`;
+    document.querySelector("#section1 .img").style.backgroundImage = `url("/images/bgImg_0${i + 1}.jpg")`;
   });
 });
 

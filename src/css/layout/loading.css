@@ -13,7 +13,7 @@ body {
     top: 0;
     width: 100%;
     height: 100vh;
-    z-index: 100;
+    z-index: 10;
 }
 .loading > div {
     color: #fff;
@@ -22,9 +22,13 @@ body {
     font-weight: 900;
     text-transform: uppercase;
 }
+.loading .split {
+    /* opacity: 1; */
+    pointer-events: none;
+    opacity: 0;
+}
 .loading .split > span {
     display: inline-block;
-    opacity: 0;
 }
 #section1 {
     width: 100%;
@@ -69,9 +73,6 @@ body {
     min-width: 880px;
     width: 100%;
     height: 100vh;
-}
-._line line {
-
 }
 .loadLine {
     position: absolute;
@@ -130,10 +131,33 @@ body {
     top: 50%;
     left: 0%;
     transform: translateY(-50%);
+    z-index: 3;
 }
 .c-line,
 ._line {
     stroke-width: 1;
     fill: none;
     stroke: #fff;
+}
+
+/* blackBox */
+.blackBox1 {
+    position: absolute;
+    width: 80vw;
+    height: 21%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #151516;
+    z-index: 2;
+}
+.blackBox2 {
+    position: absolute;
+    width: 80vw;
+    height: 21%;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #151516;
+    z-index: 2;
 }
