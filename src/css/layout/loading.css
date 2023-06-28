@@ -60,3 +60,79 @@ body {
 #section1 .title a:hover {
     text-decoration: underline;
 }
+
+
+/* lines */
+#lines {
+    position: absolute;
+    min-width: 880px;
+    width: 100%;
+    height: 100vh;
+}
+._line line {
+
+}
+.loadLine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0;
+}
+.line2 {
+    position: absolute;
+    height: 30vh;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    stroke-dasharray: 2000;    
+    stroke-dashoffset: 2000;
+    /* opacity: 0; */
+}
+.line2_full {
+    position: absolute;
+    height: 30vh;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    stroke-dasharray: 1500;    
+    stroke-dashoffset: 1500;
+    opacity: 0;
+}
+.line3 {
+    position: absolute;
+    height: 30vh;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    stroke-dasharray: 3400;    
+    stroke-dashoffset: 3400;
+    /* opacity: 0; */
+}
+.line3_full {
+    position: absolute;
+    height: 30vh;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    stroke-dasharray: 1500;    
+    stroke-dashoffset: 1500;
+    opacity: 0;
+}
+.c-line.is-horizontal {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+}
+.c-line,
+._line {
+    stroke-width: 1;
+    fill: none;
+    stroke: #fff;
+}
