@@ -73,10 +73,6 @@ function loading(){
   gsap.to(l10, 0.4, {attr: {x1: 0, x2: 1500, y1: 1500}});
   gsap.to(l7, 0.3, {attr: {x1: 0, x2: 1920, y1: 1920}, delay:0.08}); 
   gsap.to(l6, 0.2, {attr: {x1: 0, x2:1500, y1:1500},delay:0.16}) 
-
-  // <g transform="translate(960 116) rotate(45)" class="._circle">
-  //     <circle cx="300" cy="300" r="300" class="_c1"></circle>
-  // </g> 
   
   // 초기 상태 설정
   gsap.set(l1, {attr: {x2: 0, y2: 0}}); 
@@ -116,9 +112,6 @@ function loading(){
   gsap.to(l12, 1, {delay:4, opacity:0.1});
   gsap.to(circle, 1, {delay:4, opacity:0.1});
 
-  
-  
-
   // 초기 상태 설정
   gsap.set(line2, {height:"28.1vw"});
   gsap.set(line2_full, {height:"28.1vw", opacity:0});
@@ -128,16 +121,17 @@ function loading(){
   // 선 그리기
   gsap.to(line2, { delay:1.5, duration: 2,  ease: "power4.inOut", strokeDashoffset: 0});
   gsap.to(line2, { delay:2.1, duration: 1, opacity:0,  ease: "power4.inOut"});
-  gsap.to(line2_full, { delay:2, duration: 1.5, opacity:1,  ease: "power4.inOut", strokeDashoffset: 0});
+  gsap.to(line2_full, { delay:1.8, duration: 1.5, opacity:1,  ease: "power4.inOut", strokeDashoffset: 0});
   gsap.to(line2_full, { delay:3.5, duration: 2, opacity:0,  ease: "power4.inOut", strokeDashoffset: 0});
   gsap.to(line3, { delay:1.5, duration: 2,  ease: "power4.inOut", strokeDashoffset: 0});
   gsap.to(line3, { delay:2.1, duration: 1, opacity:0,  ease: "power4.inOut", strokeDashoffset: 0});
-  gsap.to(line3_full, { delay:2, duration: 1.5, opacity:1,  ease: "power4.inOut", strokeDashoffset: 0});
+  gsap.to(line3_full, { delay:1.8, duration: 1.5, opacity:1,  ease: "power4.inOut", strokeDashoffset: 0});
   gsap.to(line3_full, { delay:3.5, duration: 2, opacity:0,  ease: "power4.inOut", strokeDashoffset: 0});
 
   gsap.set(".loading .split span", { autoAlpha: 0, y: 200 });
-  gsap.set("#section1 .img", { autoAlpha: 0 });
-  gsap.set("#section1 .title", { autoAlpha: 0 });
+  gsap.set("#section1 .img", {  });
+  gsap.set("#section1 .title", {  });
+
   setTimeout(() => {
     let tl = gsap.timeline();
     tl.to(".loading .split span", {
@@ -160,13 +154,15 @@ function loading(){
         amount: 0.4,
         from: "center",
       },
-      delay: 2,
+      delay: 1.5,
     });
     tl.to("#section1 .title", {
-      autoAlpha: 1,
+      opacity:1,
+      
     });
     tl.to("#section1 .img", {
-      autoAlpha: 1,
+      opacity:1,
+      
     });
   }, 2000);
 
