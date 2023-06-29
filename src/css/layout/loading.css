@@ -14,6 +14,7 @@ body {
     width: 100%;
     height: 100vh;
     z-index: 10;
+    pointer-events: none;
 }
 .loading > div {
     color: #fff;
@@ -73,6 +74,7 @@ body {
     min-width: 880px;
     width: 100%;
     height: 100vh;
+    
 }
 .loadLine {
     position: absolute;
@@ -140,24 +142,75 @@ body {
     stroke: #fff;
 }
 
-/* blackBox */
+/* subPage */
+.home {
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 0px 20px;
+    opacity: 0;
+    z-index: 11;
+    font-size: 4rem;
+    transition: text-decoration 0.3;
+}
+.home a:hover {
+    text-decoration: underline;
+}
+.loadLine {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
 .blackBox1 {
     position: absolute;
-    width: 80vw;
-    height: 21%;
-    top: 40%;
+    width: 100%;
+    height: 50%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #151516;
     z-index: 2;
+    overflow: hidden;
+    background-color: #151516;
 }
 .blackBox2 {
     position: absolute;
-    width: 80vw;
-    height: 21%;
-    top: 60%;
+    width: 100%;
+    height: 50%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #151516;
     z-index: 2;
+    overflow: hidden;
+}
+.boxText1 {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 20vw;
+    font-family: 'TungstenCompressed';
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    /* line-height: 0px; */
+    
+}
+.boxText2 {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 20vw;
+    font-family: 'TungstenCompressed';
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    /* line-height: 0px; */
+}
+
+.split {
+    opacity: 0;
 }

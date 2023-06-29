@@ -63,12 +63,12 @@ gsap.set(circle, { opacity:0.1});
 // 처음 화면왔을시 애니메이션
 let t1 = gsap.timeline();
 t1.to(".loading .split", { opacity: 1, delay:1, y:0});
-t1.to(box1,1, {y:-200, ease:"expo.out"},"1")
-t1.to(box2,1, {y:200, ease:"expo.out"},"1")
+gsap.to(box1,5, {delay:1,y:-200, ease:"expo.out"},"1")
+gsap.to(box2,5, {delay:1,y:-25, ease:"expo.out"},"1")
 t1.to(box1, {opacity:0},"2")
 t1.to(box2, {opacity:0},"2")
 t1.to(".loading .split span", {
-    delay:0.5,
+    // delay:0.5,
     y: 250,
     duration: 1.4,
     ease: "expo.out",
@@ -132,9 +132,9 @@ function pageOut(){
     },
     });
     t2.set(box1, {opacity:1, y:-200});
-    t2.set(box2, {opacity:1, y:200});
+    t2.set(box2, {opacity:1, y:0});
     t2.to(box1, {y:0, ease:"expo.out"}, "e");
-    t2.to(box2, {y:0, ease:"expo.out"}, "e");
+    t2.to(box2, {y:-250, ease:"expo.out"}, "e");
     gsap.to(l1, 1, {opacity:0});
     gsap.to(l2, 1, {opacity:0});
     gsap.to(l3, 1, {opacity:0});

@@ -172,9 +172,9 @@ function pageOut(){
     },
   });
   t2.set(box1, {opacity:1, y:-200});
-  t2.set(box2, {opacity:1, y:200});
+  t2.set(box2, {opacity:1, y:0});
   t2.to(box1, {y:0, ease:"expo.out"}, "e");
-  t2.to(box2, {y:0, ease:"expo.out"}, "e");
+  t2.to(box2, {y:-250, ease:"expo.out"}, "e");
   gsap.to(l1, 1, {opacity:0});
   gsap.to(l2, 1, {opacity:0});
   gsap.to(l3, 1, {opacity:0});
