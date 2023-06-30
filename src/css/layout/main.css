@@ -16,6 +16,10 @@ body {
 }
 #section1 .title {
     opacity: 0;
+    pointer-events: none;
+}
+#section1 .title .page-click {
+    pointer-events: all;
 }
 .main__inner {
     width: 100%;
@@ -68,8 +72,7 @@ body {
     font-size: 2rem;
     z-index: 10;
 }
-
-.b1 {background-image: url("../../images/bgImg_01.jpg");}
-/* .b2 {background-image: url("../../images/bgImg_02.jpg");}
-.b3 {background-image: url("../../images/bgImg_03.jpg");}
-.b4 {background-image: url("../../images/bgImg_04.jpg");} */
+canvas {
+    background-size: cover;
+    background-position: center center;
+}

@@ -71,6 +71,8 @@ gsap.to(box1,1, {delay:1,y:-700, ease:"expo.in"},"1")
 gsap.to(box2,1, {delay:1,y:700, ease:"expo.in"},"1")
 t1.to(box1, {opacity:0},"2")
 t1.to(box2, {opacity:0},"2")
+t1.to(box3, {opacity:0},"2")
+t1.to(box4, {opacity:0},"2")
 t1.to(".loading .split span", {
     // delay:0.5,
     y: 250,
@@ -123,8 +125,8 @@ t1.to("#section1 .img", {
 // 페이지 이동시
 function pageOut(){
     let t2 = gsap.timeline();
-    t2.set(box1, {opacity:1, y:-700});
-    t2.set(box2, {opacity:1, y:700});
+    t2.set(box3, {opacity:1, x:-1000});
+    t2.set(box4, {opacity:1, x:1000});
     t2.to("#section1 .img", { autoAlpha: 0 });
     t2.to("#section1 .title", { autoAlpha: 0 });
     t2.to(".loading .split span", {
@@ -137,8 +139,8 @@ function pageOut(){
     },
     });
 
-    t2.to(box1,1, {y:0, ease:"expo.out"}, "r");
-    t2.to(box2,1, {y:-245, ease:"expo.out"}, "r");
+    t2.to(box3,1, {x:0, ease:"expo.out"}, "r");
+    t2.to(box4,1, {x:0, ease:"expo.out"}, "r");
     gsap.to(l1, 1, {opacity:0});
     gsap.to(l2, 1, {opacity:0});
     gsap.to(l3, 1, {opacity:0});
@@ -155,10 +157,20 @@ function pageOut(){
 }
 
 // 이미지 변경
-document.querySelectorAll(".page-click").forEach((e, i) => {
-    e.addEventListener("mouseover", () => {
-    document.querySelector("#section1 .img").style.backgroundImage = `url("/images/bgImg_0${i + 1}.jpg")`;
-    });
+// document.querySelectorAll(".page-click").forEach((e, i) => {
+//     e.addEventListener("mouseover", () => {
+//     document.querySelector("#section1 .img").style.backgroundImage = `url("/images/bgImg_0${i + 1}.jpg")`;
+//     });
+// });
+
+// 배경이미지 전환
+var button1 = new hoverEffect({
+    parent: document.querySelector(".img"),
+    intensity: 0.5,
+    image1: `images/bgImg_03.jpg`,
+    image2: `images/bgImg_02.jpg`,
+    displacementImage: "images/10.jpg",
+    hover: true
 });
   
   

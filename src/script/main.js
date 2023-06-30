@@ -51,6 +51,8 @@ const line3_full = document.querySelector(".line3_full");
 
 const box1 = document.querySelector(".blackBox1");
 const box2 = document.querySelector(".blackBox2");
+const box3 = document.querySelector(".whiteBox1");
+const box4 = document.querySelector(".whiteBox2");
 
 
 // 처음 로딩
@@ -171,10 +173,10 @@ function pageOut(){
       from: "center",
     },
   });
-  t2.set(box1, {opacity:1, y:-200});
-  t2.set(box2, {opacity:1, y:0});
-  t2.to(box1, {y:0, ease:"expo.out"}, "e");
-  t2.to(box2, {y:-250, ease:"expo.out"}, "e");
+  t2.set(box3, {opacity:1, x:-1000});
+  t2.set(box4, {opacity:1, x:1000});
+  t2.to(box3, {x:0, ease:"expo.out"}, "e");
+  t2.to(box4, {x:0, ease:"expo.out"}, "e");
   gsap.to(l1, 1, {opacity:0});
   gsap.to(l2, 1, {opacity:0});
   gsap.to(l3, 1, {opacity:0});
@@ -191,11 +193,24 @@ function pageOut(){
 }
 
 // 이미지 변경
-document.querySelectorAll(".page-click").forEach((e, i) => {
-  e.addEventListener("mouseover", (over) => {
-    document.querySelector("#section1 .img").style.backgroundImage = `url("/images/bgImg_0${i + 1}.jpg")`;
-  });
+// document.querySelectorAll(".page-click").forEach((e, i) => {
+//   e.addEventListener("mouseover", (over) => {
+//     document.querySelector("#section1 .img").style.backgroundImage = `url("/images/bgImg_0${i + 1}.jpg")`;
+//   });
+// });
+
+// 배경이미지 전환
+var button1 = new hoverEffect({
+  parent: document.querySelector(".img"),
+  intensity: 0.5,
+  image1: `images/bgImg_03.jpg`,
+  image2: `images/bgImg_02.jpg`,
+  displacementImage: "images/10.jpg",
+  hover: true
 });
+
+
+
 
 
 
