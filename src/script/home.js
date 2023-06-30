@@ -39,6 +39,8 @@ const l12 = document.querySelector("._l12");
 const circle = document.querySelector("._c1");
 const box1 = document.querySelector(".blackBox1");
 const box2 = document.querySelector(".blackBox2");
+const box3 = document.querySelector(".whiteBox1");
+const box4 = document.querySelector(".whiteBox2");
 
 
 
@@ -62,9 +64,11 @@ gsap.set(circle, { opacity:0.1});
 
 // 처음 화면왔을시 애니메이션
 let t1 = gsap.timeline();
-t1.to(".loading .split", { opacity: 1, delay:1, y:0});
-gsap.to(box1,5, {delay:1,y:-200, ease:"expo.out"},"1")
-gsap.to(box2,5, {delay:1,y:-25, ease:"expo.out"},"1")
+t1.to(".loading .split", { opacity: 1, y:0});
+t1.to(box3, 1.5, {x:-1000,ease:"expo.out", delay:0.2},"e");
+t1.to(box4, 1.5, {x: 1000,ease:"expo.out", delay:0.2},"e");
+gsap.to(box1,1, {delay:1,y:-700, ease:"expo.in"},"1")
+gsap.to(box2,1, {delay:1,y:700, ease:"expo.in"},"1")
 t1.to(box1, {opacity:0},"2")
 t1.to(box2, {opacity:0},"2")
 t1.to(".loading .split span", {
@@ -116,10 +120,11 @@ t1.to("#section1 .img", {
 // gsap.to(l11, {attr: {x1:0, x2:1920}, delay:1.15});
 // gsap.to(l12, {attr: {y1:0, y2:1920}, delay:1.1});
 // gsap.to(circle, {autoAlpha:0.1, delay:1.25});
-
 // 페이지 이동시
 function pageOut(){
     let t2 = gsap.timeline();
+    t2.set(box1, {opacity:1, y:-700});
+    t2.set(box2, {opacity:1, y:700});
     t2.to("#section1 .img", { autoAlpha: 0 });
     t2.to("#section1 .title", { autoAlpha: 0 });
     t2.to(".loading .split span", {
@@ -131,10 +136,9 @@ function pageOut(){
         from: "center",
     },
     });
-    t2.set(box1, {opacity:1, y:-200});
-    t2.set(box2, {opacity:1, y:0});
-    t2.to(box1, {y:0, ease:"expo.out"}, "e");
-    t2.to(box2, {y:-250, ease:"expo.out"}, "e");
+
+    t2.to(box1,1, {y:0, ease:"expo.out"}, "r");
+    t2.to(box2,1, {y:-245, ease:"expo.out"}, "r");
     gsap.to(l1, 1, {opacity:0});
     gsap.to(l2, 1, {opacity:0});
     gsap.to(l3, 1, {opacity:0});
@@ -152,7 +156,7 @@ function pageOut(){
 
 // 이미지 변경
 document.querySelectorAll(".page-click").forEach((e, i) => {
-    e.addEventListener("mouseover", (over) => {
+    e.addEventListener("mouseover", () => {
     document.querySelector("#section1 .img").style.backgroundImage = `url("/images/bgImg_0${i + 1}.jpg")`;
     });
 });

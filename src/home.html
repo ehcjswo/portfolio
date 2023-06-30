@@ -10,6 +10,8 @@
   <div class="loading">
     <div id="lines">
       <div class="loadLine">
+        <div class="whiteBox1"></div>
+        <div class="whiteBox2"></div>
         <div class="blackBox1"></div>
         <div class="blackBox2"></div>
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1920" viewBox="0 0 1920 1920" class="c-line js-svg is-horizontal">
@@ -38,12 +40,12 @@
 
   <main id="main">
       <section id="section1">
-          <div class="img"></div>
+          <div class="img" style = "background-image: url('/images/bgImg_01.jpg')"></div>
           <div class="title">
-              <a class="page-click" href="script.html">script</a>
-              <a class="page-click" href="react.html">react</a>
-              <a class="page-click" href="vue_next.html">vue/next</a>
-              <a class="page-click" href="php.html">php</a>
+              <a class="page-click previous" href="script.html">script</a>
+              <a class="page-click previous" href="react.html">react</a>
+              <a class="page-click next" href="vue_next.html">vue/next</a>
+              <a class="page-click next" href="php.html">php</a>
           </div>
       </section>
   </main>
@@ -53,16 +55,42 @@
   <script src="script/hover-effect.umd.js"></script>
   <script src="script/home.js"></script>
   <script>
-    var button = new hoverEffect({
-        parent: document.querySelector(".img"),
-        intensity1: 0.1,
-        intensity2: 0.1,
-        angle2: Math.PI / 2,
-        image1: "images/bgImg_01.jpg",
-        image2: "images/bgImg_01.jpg",
-        imagesRatio: 512 / 512,
-        displacementImage: "images/stripe1mul.png"
-      });
+    
+    // document.querySelectorAll(".page-click").forEach((e, i) => {
+    //     var button1 = new hoverEffect({
+    //         parent: document.querySelector(".img"),
+    //         image1: `images/bgImg_0${1}.jpg`,
+    //         image2: `images/bgImg_0${1}.jpg`,
+    //         displacementImage: "images/1.jpg",
+    //         hover: true
+    //     });
+    //     var button2 = new hoverEffect({
+    //         parent: document.querySelector(".img"),
+    //         image1: `images/bgImg_0${2}.jpg`,
+    //         image2: `images/bgImg_0${2}.jpg`,
+    //         displacementImage: "images/1.jpg",
+    //         hover: true
+    //     });
+    //     var button3 = new hoverEffect({
+    //         parent: document.querySelector(".img"),
+    //         image1: `images/bgImg_0${3}.jpg`,
+    //         image2: `images/bgImg_0${3}.jpg`,
+    //         displacementImage: "images/1.jpg",
+    //         hover: true
+    //     });
+    //     var button4 = new hoverEffect({
+    //         parent: document.querySelector(".img"),
+    //         image1: `images/bgImg_0${4}.jpg`,
+    //         image2: `images/bgImg_0${4}.jpg`,
+    //         displacementImage: "images/1.jpg",
+    //         hover: true
+    //     });
+    //     document.querySelector(".next").addEventListener("mouseover", button.next);
+    //     console.log(i+1)
+    // });
+      // document.querySelectorAll(".page-click").forEach((e, i) => {
+      //   e.addEventListener("mouseover", button.next? button.next: button.previous);
+      // });
   </script>
   
 </body>
