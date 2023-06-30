@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        #contact__wrap {
+            width: 100%;
+            background-color: #151516;
+            color: #fff;
+            display: flex;
+        }
+        .left {
+            width: 40%;
+            height: 100%;
+            padding: 10px;
+            background-color: #666;
+        }
+        .contact_img {
+            width: 35%;
+            height: 95%;
+            background-color: #333;
+            /* background-image: url(images/profile_kdh.jpg); */
+            background-size: cover;
+            background-color: #fff;
+            background-position: center;
+            position: fixed;
+            
+        }
+        .right {
+            width: 60%;
+            position: relative;
+        }
+        .developer {
+            width: 60%;
+            font-size: 16vw;
+            position: fixed;
+            text-align: center;
+            line-height: 1;
+            font-family: 'Bebas Neue';
+        }
+        .developer_desc {
+            font-family: 'ChosunNm';
+            font-size: 22px;
+        }
+        #con_section1 .developer_desc {
+            margin-top: 300px;
+        }
+        .section {
+            height: 100vw;
+            padding: 0 3vw;
+            min-width: 300px;
+            min-height: 400px;
+            padding-top: 50px;
+        }
+        #con_section1 {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="contact__wrap">
+        <div class="left">
+            <div class="contact_img"></div>
+        </div>
+        <div class="right">
+            <div id="con_section1" class="section">
+                <div class="developer_desc">
+                    <div class="developer_desc1">안녕하세요. 최고의 개발자를 꿈꾸는 김도현입니다.</div>
+                    <div class="developer_desc1">저의 포트폴리오에 오신 것을 환영합니다. </div>
+                    <div class="developer_desc1">디자인에 관심이 생겨 웹반응형UI/UX 웹 퍼블리셔과정을 배우게 </div>
+                    <div class="developer_desc1">되었는데 웹페이지에서 동적인 것을 구현할 수 있는 프론트엔드 </div>
+                    <div class="developer_desc1">개발에 점차 흥미를 느끼게 됐습니다.</div>
+                </div>
+            </div>
+            <div id="con_section2" class="section">
+                <div class="developer_desc">
+                    안녕하세요. 최고의 개발자를 꿈꾸는 김도현입니다.
+                    저의 포트폴리오에 오신 것을 환영합니다. 
+                    디자인에 관심이 생겨 웹반응형UI/UX 웹 퍼블리셔과정을 배우게 
+                    되었는데 웹페이지에서 동적인 것을 구현할 수 있는 프론트엔드 
+                    개발에 점차 흥미를 느끼게 됐습니다. 
+                </div>
+            </div>
+            <div id="con_section3" class="section">
+                <div class="developer_desc">
+                    안녕하세요. 최고의 개발자를 꿈꾸는 김도현입니다.
+                    저의 포트폴리오에 오신 것을 환영합니다. 
+                    디자인에 관심이 생겨 웹반응형UI/UX 웹 퍼블리셔과정을 배우게 
+                    되었는데 웹페이지에서 동적인 것을 구현할 수 있는 프론트엔드 
+                    개발에 점차 흥미를 느끼게 됐습니다. 
+                </div>
+            </div>
+            <div id="con_section4" class="section">
+                <div class="developer_desc">
+                    안녕하세요. 최고의 개발자를 꿈꾸는 김도현입니다.
+                    저의 포트폴리오에 오신 것을 환영합니다. 
+                    디자인에 관심이 생겨 웹반응형UI/UX 웹 퍼블리셔과정을 배우게 
+                    되었는데 웹페이지에서 동적인 것을 구현할 수 있는 프론트엔드 
+                    개발에 점차 흥미를 느끼게 됐습니다. 
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
+    <script>
+
+        const lenis = new Lenis()
+        lenis.on('scroll', (e) => {
+            console.log(e)
+        })
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf);
+
+
+        const box1 = document.querySelector(".developer");
+        const box1_1 = document.querySelectorAll(".developer_desc1");
+        const box2 = document.querySelector("#con_section1 .developer_desc");
+        
+
+        // const ani1 = gsap.timeline();
+        // ani1.to(box1, {scale: 1.5, duration:2})
+        // .to(box1, {scale: 60, delay:5, duration:5})
+
+        // ScrollTrigger.create({
+        //     animation: ani1,
+        //     trigger: ".developer",
+        //     start: "top top",
+        //     end: "bottom botoom",
+        //     scrub: true,
+        //     pin: true,
+        //     anticipatePin:1,
+        //     markers: true,
+        // });
+
+        box1_1.forEach((box, index) => {
+            const animation = gsap.timeline({ paused: true });
+            animation.to(box, { opacity: 1, duration: 2 });
+
+            ScrollTrigger.create({
+                animation: animation,
+                trigger: "#con_section1",
+                start: "top top",
+                end: "+=3000",
+                scrub: true,
+                pin: true,
+                anticipatePin: 1,
+                markers: true,
+                onEnter: () => animation.play(),
+                onLeave: () => animation.reverse(),
+                onRefresh: () => ScrollTrigger.refresh(),
+            });
+        });
+    </script>
+</body>
+</html>
