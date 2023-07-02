@@ -8,7 +8,7 @@ function pageClick() {
       pageOut();
       setTimeout(() => {
         window.location.href = hrefName;
-      }, 4500);
+      }, 4200);
     });
   });
 }
@@ -53,6 +53,8 @@ const box1 = document.querySelector(".blackBox1");
 const box2 = document.querySelector(".blackBox2");
 const box3 = document.querySelector(".whiteBox1");
 const box4 = document.querySelector(".whiteBox2");
+
+const subMenu = document.querySelector("#sub_menu");
 
 
 // 처음 로딩
@@ -155,6 +157,7 @@ function loading(){
     tl.to("#section1 .img", {
       opacity:1,
     });
+    tl.to(subMenu, {opacity:1,});
   }, 2000);
 }
 
@@ -164,6 +167,7 @@ function pageOut(){
   
   t2.to("#section1 .img", { autoAlpha: 0 });
   t2.to("#section1 .title", { autoAlpha: 0 });
+  t2.to(subMenu, { autoAlpha: 0 });
   t2.to(".loading .split span", {
     y: 0,
     duration: 1.4,
@@ -176,7 +180,7 @@ function pageOut(){
   t2.set(box3, {opacity:1, x:-1000});
   t2.set(box4, {opacity:1, x:1000});
   t2.to(box3, {x:0, ease:"expo.out"}, "e");
-  t2.to(box4, {x:0, ease:"expo.out"}, "e");
+  t2.to(box4, {x:"-50%", ease:"expo.out"}, "e");
   gsap.to(l1, 1, {opacity:0});
   gsap.to(l2, 1, {opacity:0});
   gsap.to(l3, 1, {opacity:0});
@@ -203,7 +207,7 @@ function pageOut(){
 var button1 = new hoverEffect({
   parent: document.querySelector(".img"),
   intensity: 0.5,
-  image1: `images/bgImg_03.jpg`,
+  image1: `images/bgImg_05.jpg`,
   image2: `images/bgImg_02.jpg`,
   displacementImage: "images/10.jpg",
   hover: true

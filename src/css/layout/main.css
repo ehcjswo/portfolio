@@ -4,6 +4,7 @@ body {
     position: relative;
     /* overflow: hidden; */
     background-color: #151516;
+    box-sizing: border-box;
 }
 #main {
     position: relative;
@@ -81,6 +82,7 @@ body {
     text-transform: uppercase;
     font-weight: 700;
     pointer-events: none;
+    opacity: 0;
 }
 #sub_menu ul {
     pointer-events: all;
@@ -89,6 +91,5 @@ body {
     text-decoration: underline;
 }
 canvas {
-    background-size: cover;
-    background-position: center center;
+
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2번</title>
+    <title>vue_next</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
         body{
@@ -231,8 +231,8 @@
     gsap.set(l6, {attr: {x2: 1500, y2: 0}}); 
     gsap.set(l7, {attr: {x2: 1920, y2: 0}}); 
     gsap.set(l10, {attr: {x2: 1500, y2: 0 }});
-    gsap.set(box3, {x:-1000})
-    gsap.set(box4, {x:1000})
+    gsap.set(box3, {x:"-200%"})
+    gsap.set(box4, {x:"200%"})
 
     gsap.set(l1, {attr: {x2: 0, y2: 0}}); 
     gsap.set(l2, {attr: {x2: 0, y2: 0}}); 
@@ -252,8 +252,8 @@
     t4.set(box1, {opacity:1, });
     t4.set(box2, {opacity:1});
     t4.set(".home", {zIndex:1});
-    t4.set(".boxText1", {autoAlpha:0, y:200});
-    t4.set(".boxText2", {autoAlpha:0, y:-200});
+    t4.set(".boxText1", {autoAlpha:0, y:"40%"});
+    t4.set(".boxText2", {autoAlpha:0, y:"-40%"});
     
 
     // t4.to(".split",0.1, {opacity:0,delay:1,});
@@ -261,8 +261,8 @@
     t4.to(".boxText2",1, {autoAlpha:1,y:0, delay:0},"1");
     // t4.to(".split",0.1, {opacity:1, zIndex:11,delay:0.9},"1");
     // t4.to(".split",0.1, {opacity:0, zIndex:1, delay:0.1},"2");
-    t4.to(box1,3, {y:-1200, ease:"power4.inOut", delay:0.5},"2")
-    t4.to(box2,3, {y:1200, ease:"power4.inOut", delay:0.5},"2")
+    t4.to(box1,3, {y:"-200%", ease:"power4.inOut", delay:0.5},"2")
+    t4.to(box2,3, {y:"200%", ease:"power4.inOut", delay:0.5},"2")
     // t4.to(".split", {opacity:0 },"2");
 
     t4.to("#page", {opacity:1 },"2");
@@ -317,7 +317,7 @@
             gsap.to(l11, 0.15, {attr: {x1:0, x2:1920}, delay:0.4});
             gsap.to(l12, 0.15, {attr: {y1:0, y2:1920}, delay:0.51});
             gsap.to(circle, 0.15, {autoAlpha:1, delay:0.65});
-            gsap.to(box3, 1, {x: 0,ease:"expo.out", delay:1.5});
+            gsap.to(box3, 1, {x: "0%",ease:"expo.out", delay:1.5});
             gsap.to(box4, 1, {x: "-50%",ease:"expo.out", delay:1.5});
             
             gsap.to(l1, 1, {delay:1.5, opacity:0.1});

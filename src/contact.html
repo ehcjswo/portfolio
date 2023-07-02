@@ -19,6 +19,7 @@
             width: 40%;
             height: 100%;
             padding: 10px;
+            opacity: 0;
         }
         .contact_img {
             width: 38%;
@@ -29,11 +30,11 @@
             /* background-color: #a3a3a3; */
             background-position: center;
             position: fixed;
-            
         }
         .right {
             width: 60%;
             position: relative;
+            opacity: 0;
         }
         .developer {
             width: 60%;
@@ -51,7 +52,6 @@
             /* margin-top: 230px; */
             padding-top: 230px;
             text-align: center;
-
         }
         .developer_desc1-1 {
             font-size: 2.3rem;
@@ -295,6 +295,8 @@
         t4.set(".boxText2", {autoAlpha:0, y:-200});
         
 
+        t4.to(".left", {opacity:1})
+        t4.to(".right", {opacity:1})
         t4.to(".boxText1",1, {autoAlpha:1,y:0, delay:0},"1");
         t4.to(".boxText2",1, {autoAlpha:1,y:0, delay:0},"1");
         t4.to(box1,3, {y:-1200, ease:"power4.inOut", delay:0.5},"2")

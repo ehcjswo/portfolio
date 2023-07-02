@@ -8,7 +8,7 @@ function pageClick() {
             pageOut();
             setTimeout(() => {
             window.location.href = hrefName;
-            }, 4000);
+            }, 4100);
         });
     });
 }
@@ -41,6 +41,7 @@ const box1 = document.querySelector(".blackBox1");
 const box2 = document.querySelector(".blackBox2");
 const box3 = document.querySelector(".whiteBox1");
 const box4 = document.querySelector(".whiteBox2");
+const subMenu = document.querySelector("#sub_menu");
 
 
 
@@ -83,52 +84,19 @@ t1.to(".loading .split span", {
         from: "center",
     },
 });
-t1.to("#section1 .title", {
-    opacity:1,
-});
-t1.to("#section1 .img", {
-    opacity:1,
-});
+t1.to("#section1 .title", {opacity:1,});
+t1.to("#section1 .img", {opacity:1,});
+t1.to(subMenu, {opacity:1,});
 
 
-// gsap.set(box1, {opacity: 0});
-// gsap.set(box2, {opacity: 0});
-// gsap.set(load, {opacity: 1});
-// gsap.set(l6, {attr: {x2: 1500, y2: 0}}); 
-// gsap.set(l7, {attr: {x2: 1920, y2: 0}}); 
-// gsap.set(l10, {attr: {x2: 1500, y2: 0 }});
-
-// gsap.set(l1, {attr: {x2: 0, y2: 0}}); 
-// gsap.set(l2, {attr: {x2: 0, y2: 0}}); 
-// gsap.set(l3, {attr: {x2: 0, y2: 0}}); 
-// gsap.set(l4, {attr: {x2: 0, y2: 0}}); 
-// gsap.set(l5, {attr: {x2: 0, y2: 0}});
-// gsap.set(l8, {attr: {x2: 1860, y2: 0}});
-// gsap.set(l9, {attr: {x2: 1740, y2: 0}});
-// gsap.set(l11, {attr: {x1:0, x2:0}});
-// gsap.set(l12, {attr: {y1:0, y2:0}});
-// gsap.set(circle, {autoAlpha:0});
-// 선 그리기
-// gsap.to(l10, 0.4, {attr: {x1: 0, x2: 1500, y1: 1500}});
-// gsap.to(l7, 0.3, {attr: {x1: 0, x2: 1920, y1: 1920}, delay:0.08}); 
-// gsap.to(l6, 0.2, {attr: {x1: 0, x2:1500, y1:1500},delay:0.16}) 
-// gsap.to(l1, 0.2, {attr: {x2:1500, y2:1500}, delay:0.8});
-// gsap.to(l2, {attr: {x2:1740, y2:1740}, delay:1.05});
-// gsap.to(l3, {attr: {x2:1860, y2:1860}, delay:1.1});
-// gsap.to(l4, 0.3, {attr: {x2:1920, y2:1920}, delay:0.85});
-// gsap.to(l5, 0.4, {attr: {x2:1500, y2:1500}, delay:0.92});
-// gsap.to(l8, {attr: {x1:0, x2:1860, y1:1860}, delay:1.0});
-// gsap.to(l9, {attr: {x1:0, x2:1740, y1:1740}, delay:1.2});
-// gsap.to(l11, {attr: {x1:0, x2:1920}, delay:1.15});
-// gsap.to(l12, {attr: {y1:0, y2:1920}, delay:1.1});
-// gsap.to(circle, {autoAlpha:0.1, delay:1.25});
 // 페이지 이동시
 function pageOut(){
     let t2 = gsap.timeline();
-    t2.set(box3, {opacity:1, x:-1000});
-    t2.set(box4, {opacity:1, x:1000});
+    t2.set(box3, {opacity:1, x:"-100%"});
+    t2.set(box4, {opacity:1, x:"100%"});
     t2.to("#section1 .img", { autoAlpha: 0 });
     t2.to("#section1 .title", { autoAlpha: 0 });
+    t2.to(subMenu, { autoAlpha: 0 });
     t2.to(".loading .split span", {
     y: 0,
     duration: 1.4,
@@ -140,7 +108,7 @@ function pageOut(){
     });
 
     t2.to(box3,1, {x:0, ease:"expo.out"}, "r");
-    t2.to(box4,1, {x:0, ease:"expo.out"}, "r");
+    t2.to(box4,1, {x:"-50%", ease:"expo.out"}, "r");
     gsap.to(l1, 1, {opacity:0});
     gsap.to(l2, 1, {opacity:0});
     gsap.to(l3, 1, {opacity:0});
@@ -167,7 +135,7 @@ function pageOut(){
 var button1 = new hoverEffect({
     parent: document.querySelector(".img"),
     intensity: 0.5,
-    image1: `images/bgImg_03.jpg`,
+    image1: `images/bgImg_06.jpg`,
     image2: `images/bgImg_02.jpg`,
     displacementImage: "images/10.jpg",
     hover: true
