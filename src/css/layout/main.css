@@ -72,6 +72,22 @@ body {
     font-size: 2rem;
     z-index: 10;
 }
+#sub_menu {
+    position: absolute;
+    padding: 40px;
+    bottom: 0;
+    right: 0;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 700;
+    pointer-events: none;
+}
+#sub_menu ul {
+    pointer-events: all;
+}
+#sub_menu a:hover {
+    text-decoration: underline;
+}
 canvas {
     background-size: cover;
     background-position: center center;

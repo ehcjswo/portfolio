@@ -65,8 +65,8 @@ gsap.set(circle, { opacity:0.1});
 // 처음 화면왔을시 애니메이션
 let t1 = gsap.timeline();
 t1.to(".loading .split", { opacity: 1, y:0});
-t1.to(box3, 1.5, {x:-1000,ease:"expo.out", delay:0.2},"e");
-t1.to(box4, 1.5, {x: 1000,ease:"expo.out", delay:0.2},"e");
+t1.to(box3, 1.5, {x:"-200%",ease:"expo.out", delay:0.2},"e");
+t1.to(box4, 1.5, {x: "200%",ease:"expo.out", delay:0.2},"e");
 gsap.to(box1,1, {delay:1,y:-700, ease:"expo.in"},"1")
 gsap.to(box2,1, {delay:1,y:700, ease:"expo.in"},"1")
 t1.to(box1, {opacity:0},"2")
