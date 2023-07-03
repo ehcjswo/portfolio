@@ -20,8 +20,8 @@ body {
     color: #fff;
     font-size: 20vw;
     font-family: 'TungstenCompressed';
-    font-weight: 900;
     text-transform: uppercase;
+    font-weight: 900;
 }
 .loading .split {
     /* opacity: 1; */
