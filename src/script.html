@@ -12,6 +12,8 @@
       body {
         /* overflow: hidden; */
         background: linear-gradient(135deg, black, #220033);
+        font-family: 'TungstenCompressed';
+        text-transform: uppercase;
       }
 
       .carousel {
@@ -23,13 +25,13 @@
       }
 
       .carousel-item {
-        --items: 10;
+        --items: 6;
         --width: clamp(150px, 30vw, 300px);
         --height: clamp(200px, 40vw, 400px);
-        --x: calc(var(--active) * 800%);
-        --y: calc(var(--active) * 200%);
+        --x: calc(var(--active) * 400%);
+        --y: calc(var(--active) * 150%);
         --rot: calc(var(--active) * 120deg);
-        --opacity: calc(var(--zIndex) / var(--items) * 3 - 2);
+        --opacity: calc(var(--zIndex) / var(--items) * 3 - 1.8);
         overflow: hidden;
         position: absolute;
         z-index: var(--zIndex);
@@ -56,7 +58,6 @@
         height: 100%;
         transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
         opacity: var(--opacity);
-        font-family: "Orelo-sw-db", serif;
       }
       .carousel-item .carousel-box:before {
         content: "";
@@ -70,13 +71,31 @@
       }
       .carousel-item .title {
         position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-right: 40px;
         z-index: 1;
+        font-weight: 300;
         color: #fff;
         bottom: 20px;
         left: 20px;
         transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
         font-size: clamp(20px, 3vw, 30px);
         text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+      }
+      .code,
+      .view {
+        border: 1px solid #fff;
+        padding: 0px 15px;
+        transition: all 0.3s;
+        font-weight: 300;
+        font-size: 3rem;
+      }
+      .code:hover,
+      .view:hover {
+        background-color: #fff;
+        color: #000;
       }
       .carousel-item .num {
         position: absolute;
@@ -86,6 +105,7 @@
         left: 20px;
         transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
         font-size: clamp(20px, 10vw, 80px);
+        font-weight: 500;
       }
       .carousel-item img {
         width: 100%;
@@ -142,7 +162,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-family: "Orelo-sw-db", serif;
         pointer-events: all;
         color: black;
         text-decoration: none;
@@ -203,88 +222,69 @@
   <div class="carousel">
     <div class="carousel-item">
       <div class="carousel-box">
-        <div class="title">Paris</div>
-        <div class="num">01</div>
-        <img src="https://media.istockphoto.com/id/949299844/it/foto/vista-prospettica-dellesterno-delledificio-contemporaneo.jpg?s=612x612&w=0&k=20&c=_DR1aRHuTEV3EYBJo1ZXq1pF4SgwB9EVWQLaBj4sC5g=" />
+        <div class="title">
+          <a href="#" class="code">code</a>
+          <a href="#" class="view">view</a>
+        </div>
+        <div class="num">search effect</div>
+        <img src="images/mockupSearch.jpg" />
       </div>
     </div>
   
     <div class="carousel-item">
       <div class="carousel-box">
-        <div class="title">Warsaw</div>
-        <div class="num">02</div>
-        <img src="https://media.istockphoto.com/id/1150545984/it/foto/palazzo-moderno-di-lusso-con-piscina.jpg?s=612x612&w=0&k=20&c=Pbrai_VGc9tUviMCF1UaBErdS1YGyIVWsD29jzMZwTY=" />
+        <div class="title">
+          <a href="#" class="code">code</a>
+          <a href="#" class="view">view</a>
+        </div>
+        <div class="num">mouse effect</div>
+        <img src="images/mockupMouse.jpg" />
       </div>
     </div>
   
     <div class="carousel-item">
       <div class="carousel-box">
-        <div class="title">Madrid</div>
-        <div class="num">03</div>
-        <img
-          src="https://media.istockphoto.com/id/1214351345/it/foto/guardando-direttamente-lo-skyline-del-quartiere-finanziario-nel-centro-di-londra-immagine-di.jpg?s=612x612&w=0&k=20&c=oNNbPzPvcQ-4RA6AeatNIxHQIafBiXmDRtUUY0Ska-I="
-        />
+        <div class="title">
+          <a href="#" class="code">code</a>
+          <a href="#" class="view">view</a>
+        </div>
+        <div class="num">quiz effect</div>
+        <img src="images/mockupQuiz.jpg"/>
       </div>
     </div>
   
     <div class="carousel-item">
       <div class="carousel-box">
-        <div class="title">Sydney</div>
-        <div class="num">04</div>
-        <img src="https://media.istockphoto.com/id/904390980/it/foto/foto-di-architettura-contemporanea-astratta.jpg?s=612x612&w=0&k=20&c=_P4Wmx5nq5MeDuimpNklKCBlrLovmCyd9lfiMKeJZDs=" />
+        <div class="title">
+          <a href="#" class="code">code</a>
+          <a href="#" class="view">view</a>
+        </div>
+        <div class="num">parallax effect</div>
+        <img src="images/mockupParallax.jpg" />
       </div>
     </div>
   
     <div class="carousel-item">
       <div class="carousel-box">
-        <div class="title">Istanbul</div>
-        <div class="num">05</div>
-        <img src="https://media.istockphoto.com/id/130408311/it/foto/piscina-allesterno-della-casa-moderna-al-crepuscolo.jpg?s=612x612&w=0&k=20&c=ZoVjx7uDjoHKmpM1ayW6UR1SQOoYh_xx-QMG_qeOYs0=" />
+        <div class="title">
+          <a href="#" class="code">code</a>
+          <a href="#" class="view">view</a>
+        </div>
+        <div class="num">slider effect</div>
+        <img src="images/mockupSlider.jpg" />
       </div>
     </div>
   
     <div class="carousel-item">
       <div class="carousel-box">
-        <div class="title">Prague</div>
-        <div class="num">06</div>
-        <img src="https://media.istockphoto.com/id/1299954175/it/foto/villa-cubica-moderna.jpg?s=612x612&w=0&k=20&c=DhGhb3c1E3DW_fbrWJ_R_Zh0Lbwu6syFeRLsKlZ9no8=" />
+        <div class="title">
+          <a href="#" class="code">code</a>
+          <a href="#" class="view">view</a>
+        </div>
+        <div class="num">game effect</div>
+        <img src="images/mockupGame.jpg" />
       </div>
     </div>
-  
-    <div class="carousel-item">
-      <div class="carousel-box">
-        <div class="title">Munich</div>
-        <div class="num">07</div>
-        <img src="https://media.istockphoto.com/id/926689776/it/foto/vista-ad-angolo-basso-dei-grattacieli-di-new-york.jpg?s=612x612&w=0&k=20&c=DmEB0Ty7ZwDnBoU5SuA8FNevOp4G1UcECw5aS4vA9A8=" />
-      </div>
-    </div>
-  
-    <div class="carousel-item">
-      <div class="carousel-box">
-        <div class="title">Venice</div>
-        <div class="num">08</div>
-        <img src="https://media.istockphoto.com/id/1191376167/it/foto/villa-dellisola.jpg?s=612x612&w=0&k=20&c=PKslWo4FdbjinohKQlK_oWL34jqAsnzMTdy2bxEAf-I=" />
-      </div>
-    </div>
-  
-    <div class="carousel-item">
-      <div class="carousel-box">
-        <div class="title">Oslo</div>
-        <div class="num">09</div>
-        <img src="https://media.istockphoto.com/id/184316397/it/foto/londra-edifici-aziendali.jpg?s=612x612&w=0&k=20&c=XqrRxEPzFnwRFk7PQrCiu9-FPfCTPyMe5BKKaxYXCs8=" />
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="carousel-box">
-        <div class="title">London</div>
-        <div class="num">10</div>
-        <img src="https://media.istockphoto.com/id/184619832/it/foto/distretto-finanziario-al-crepuscolo-londra.jpg?s=612x612&w=0&k=20&c=RAThrJOBY6vhlT6-kQpu9-9jLEzWToYfdw46S8B0Mu0=" />
-      </div>
-    </div>
-  </div>
-  
-  <div class="layout">
-    <div class="box">High-end, full-service<br />visual content creation<br />for lifestyle branding.</div>
   </div>
   
   <div class="cursor"></div>
@@ -303,82 +303,6 @@
 <script src="https://cdn.jsdelivr.net/gh/studio-freightlenis@1bundled/lenis.min.js"></script>
 <script>
 
-var polygons = document.querySelectorAll("#hexs polygon");
-var restartPolygon = document.getElementById("restartPolygon");
-var restartText = document.getElementById("restartText");
-var redDot = document.getElementById("redDot");
-var startText = document.getElementById("startText");
-var center = 85;
-var polygonCenter = polygons[center];
-var wrapper = document.querySelector("#wrapper");
-polygonCenter.classList.add("center");
 
-var polygonsRows = [];
-var j = -1;
-var desetica = 1;
-for (var i = 1; i < 10; i++) {
-    window['polygons' + i] = [];
-    polygonsRows.push(window['polygons' + i])
-}
-for (var i = 0; i < polygons.length; i++) {
-    j++;
-    if (j < 19) {
-        window['polygons' + desetica].push(polygons[i]);
-        if (j === 18) {
-            j = -1;
-            desetica++;
-        }
-    }
-}
-
-//GSAP Timeline
-
-//do nothing
-
-
-function anima() {
-  var tl2 = new TimelineMax({zIndex:15, opacity: 0,delay: 0, paused: false });
-  wrapper.style.display = "block";
-  wrapper.style.pointerEvents = "all";
-  wrapper.style.zIndex = "100"
-
-  tl2.set(polygons, {zIndex:15,opacity: 0, scale:1 ,rotation: 60, x: 20, y: -10 });
-
-  tl2.to(polygons, 1, {scale:0.9, opacity: 1, ease: Elastic.easeInOut, stagger: { amount: 0.4, from: "start" } });
-  tl2.staggerTo(polygons, 0.4, { rotation: 0, x: 0, y: 0 });
-  tl2.to(polygons, 1, {opacity: 1, scale: 1.09, ease: Elastic.easeInOut, stagger: { amount: 0.15, from: "center" } },"1");
-  tl2.play();
-}
-
-function anima2() {
-  var tl3 = new TimelineMax({zIndex:15, opacity: 0,delay: 0, paused: false });
-  wrapper.style.display = "block";
-  wrapper.style.pointerEvents = "all";
-  wrapper.style.zIndex = "100"
-
-  tl3.set(polygons, {zIndex:15,opacity: 1, scale:1.09 ,rotation: 0, x: 0, y: 0 });
-
-  tl3.to(polygons, 0.3, {opacity: 1, scale: 0.9, ease: Elastic.easeInOut, stagger: { amount: 0.15, from: "center" } },"1");
-  tl3.staggerTo(polygons, 0.4, { rotation: 60, x: 20, y: -10 });
-  tl3.to(polygons, 0.5, { opacity: 0, ease: Elastic.easeInOut, stagger: { amount: 0.2, from: "end" } });
-  tl3.play();
-  setInterval(()=>{
-
-    wrapper.style.zIndex = "0"
-  },2500)
-}
-anima2();
-
-function homeClick() {
-  document.querySelector(".back a").addEventListener("click", (e) => {
-    e.preventDefault();
-    // document.getElementById("cover").classList.add("cover-right");
-    setTimeout(() => {
-      window.location.href = "../home.html";
-    }, 2000);
-    anima();
-  });
-}
-homeClick();
 </script>
 </html>

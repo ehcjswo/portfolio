@@ -108,7 +108,7 @@ function pageOut(){
     });
 
     t2.to(box3,1, {x:0, ease:"expo.out"}, "r");
-    t2.to(box4,1, {x:"-50%", ease:"expo.out"}, "r");
+    t2.to(box4,1, {x:"0%", ease:"expo.out"}, "r");
     gsap.to(l1, 1, {opacity:0});
     gsap.to(l2, 1, {opacity:0});
     gsap.to(l3, 1, {opacity:0});

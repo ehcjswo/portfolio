@@ -9,7 +9,7 @@ let isDown = false
 /*--------------------
 Contants
 --------------------*/
-const speedWheel = 0.02
+const speedWheel = 0.05
 const speedDrag = -0.1
 
 /*--------------------
