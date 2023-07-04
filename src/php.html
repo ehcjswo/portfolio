@@ -3,296 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4번</title>
+    <title>react_vue_next</title>
+    <link rel="stylesheet" href="css/style.css">
     <style>
-       * {
-  box-sizing: border-box;
-}
+        body{
+            overflow:scroll;
+            overflow-x:hidden;
+            font-family: 'TungstenCompressed';
+            color:#FFF;
+            background-color: #151516;
+        }
+        body::-webkit-scrollbar {
+            width: 0.1px;  /* 스크롤바의 너비 */
+        }
 
-body {
-  height: 100vh;
-  overflow: hidden;
-  background: #000;
-  color: #fff;
-  font-family: "Playfair Display", cursive;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+        body::-webkit-scrollbar-track {
+            background-color: transparent;  /* 스크롤바 트랙의 배경색 */
+        }
 
-.menu {
-  overflow: hidden;
-  cursor: grab;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  height: 40vh;
-}
-.menu.is-dragging {
-  cursor: grabbing;
-}
-.menu--wrapper {
-  counter-reset: count;
-  display: flex;
-  position: absolute;
-  z-index: 1;
-  height: 100%;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-.menu--item {
-  counter-increment: count;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 30vw;
-  height: 100%;
-  padding: 0 1.5vw;
-  overflow: hidden;
-}
-@media (max-width: 767px) {
-  .menu--item {
-    width: 40vw;
-    height: 40vw;
-  }
-}
-.menu--item:nth-child(n+10):before {
-  content: counter(count);
-}
-.menu--item figure {
-  position: absolute;
-  z-index: 1;
-  display: block;
-  user-select: none;
-  -webkit-appearance: none;
-  padding: 0;
-  border: none;
-  outline: none;
-  box-shadow: none;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  pointer-events: none;
-  transform-origin: center;
-}
-.menu--item figure img {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  vertical-align: middle;
-  transform-origin: center;
-}
-.menu--item figure:before {
-  position: absolute;
-  z-index: 2;
-  bottom: 1vw;
-  left: 1vw;
-  display: inline-block;
-  content: "0" counter(count);
-  color: #ffffff;
-  font-size: 3vw;
-}
+        body::-webkit-scrollbar-thumb {
+            background-color: transparent;  /* 스크롤바 썸의 배경색 */
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+        #page {
+            overflow:hidden;
+            white-space:nowrap;
+            position:fixed;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            display:flex;
+            flex-wrap:nowrap;
+            opacity: 0;
+            font-size: 10rem;
+        }
+        .pane {
+            flex:0 0 100vw;
+            height:100vh;
+            display:flex;
+            position:relative;
+            align-items:center;
+            justify-content:center;
+        }
 
-.version {
-  display: inline-block;
-  position: fixed;
-  text-align: center;
-  z-index: 1;
-  text-decoration: none;
-  background: #333;
-  font-family: sans-serif;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 12px;
-  border-radius: 10px;
-  box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2);
-  top: -30px;
-  right: -50px;
-  bottom: auto;
-  transform: rotate(45deg);
-  transform-origin: 0% 100%;
-  border-radius: 0;
-  padding: 8px 30px;
-  font-size: 11px;
-}
-.version:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100px;
-  bottom: 0;
-  right: 0%;
-  background: transparent;
-}
-@media (max-width: 767px) {
-  .version {
-    transform: scale(0.6) rotate(45deg);
-    right: -100px;
-  }
-}
     </style>
 </head>
 <body>
-<div class="menu">
-    <div class="menu--wrapper">
-      <div class="menu--item">
-        <figure><img src="https://images.unsplash.com/photo-1595265677860-9a3168007dc0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="" /></figure>
+    <div class="loading ef_sub">
+        <div id="lines">
+          <div class="loadLine">
+            <div class="whiteBox1"></div>
+            <div class="whiteBox2"></div>
+            <div class="blackBox1">
+                <div class="boxText1">
+                    developer.kdh
+                </div>
+            </div>
+            <div class="blackBox2">
+                <div class="boxText2">
+                    developer.kdh
+                </div>
+            </div>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1920" viewBox="0 0 1920 1920" class="c-line js-svg is-horizontal">
+                  <g transform="translate(0 420)" class="_line">
+                      <line x2="1500" y2="1500" class="_l1"></line> 
+                      <line x2="1740" y2="1740" transform="translate(0 -240)" class="_l2"></line> 
+                      <line x2="1860" y2="1860" transform="translate(0 -360)" class="_l3"></line> 
+                      <line x2="1920" y2="1920" transform="translate(0 -420)" class="_l4"></line> 
+                      <line x2="1500" y2="1500" transform="translate(420 -420)" class="_l5"></line> 
+                      <line x1="1500" y2="1500" transform="translate(0 -420)" class="_l6"></line>
+                      <line x1="1920" y2="1920" transform="translate(0 -420)" class="_l7"></line> 
+                      <line x1="1860" y2="1860" transform="translate(60 -360)" class="_l8"></line> 
+                      <line x1="1740" y2="1740" transform="translate(180 -240)" class="_l9"></line> 
+                      <line x1="1500" y2="1500" transform="translate(420)" class="_l10"></line> 
+                      <line x2="1920" transform="translate(0 540)" class="_l11"></line> 
+                      <line y2="1920" transform="translate(960 -420)" class="_l12"></line> 
+                      <g transform="translate(960 116) rotate(45)" class="._circle">
+                          <circle cx="300" cy="300" r="300" class="_c1"></circle>
+                      </g> 
+                  </g>
+              </svg> 
+          </div> 
       </div>
-  
-      <div class="menu--item">
-        <figure><img src="https://images.unsplash.com/photo-1594786118579-95ba90c801ec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="" /></figure>
-      </div>
-  
-      <div class="menu--item">
-        <figure><img src="https://images.unsplash.com/photo-1509339022327-1e1e25360a41?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="" /></figure>
-      </div>
-  
-      <div class="menu--item">
-        <figure><img src="https://images.unsplash.com/photo-1525417071002-5ee4e6bb44f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="" /></figure>
-      </div>
-  
-      <div class="menu--item">
-        <figure><img src="https://images.unsplash.com/photo-1594072702031-f0e2a602dd2c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="" /></figure>
-      </div>
-  
-      <div class="menu--item">
-        <figure><img src="https://images.unsplash.com/photo-1592989819277-a3aafa40c66a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="" /></figure>
-      </div>
+        <div class="split">developer.kdh</div>
     </div>
-  </div>
-  
-  
-  <a class="version" href="https://codepen.io/supah/pen/xxZMdNW" target="_parent">Vertical version</a>
+    <div id="page">
+        <div class="pane"><div>Looping Horizontal Scroll</div></div>
+        <div class="pane"><div>2</div></div>
+        <div class="pane"><div>3</div></div>
+        <div class="pane"><div>4</div></div>
+        <div class="pane"><div>5</div></div>
+        <div class="pane"><div>Last</div></div>
+        <div class="pane"><div>Looping Horizontal Scroll</div></div>
+    </div>
+    <div class="home">
+        <a class="homeClick" href="home.html">HOME</a>
+    </div>
+
 </body>
+<!-- <script src="script/main.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
 <script>
-    /*--------------------
-Vars
---------------------*/
-const $menu = document.querySelector('.menu')
-const $items = document.querySelectorAll('.menu--item')
-const $images = document.querySelectorAll('.menu--item img')
-let menuWidth = $menu.clientWidth
-let itemWidth = $items[0].clientWidth
-let wrapWidth = $items.length * itemWidth
+    var page = document.getElementById('page');
+    var last_pane = page.getElementsByClassName('pane');
+    last_pane = last_pane[last_pane.length-1];
+    var dummy_x = null;
 
-let scrollSpeed = 0
-let oldScrollY = 0
-let scrollY = 0
-let y = 0
-
-
-/*--------------------
-Lerp
---------------------*/
-const lerp = (v0, v1, t) => {
-  return v0 * ( 1 - t ) + v1 * t
-}
-
-
-/*--------------------
-Dispose
---------------------*/
-const dispose = (scroll) => {
-  gsap.set($items, {
-    x: (i) => {
-      return i * itemWidth + scroll
-    },
-    modifiers: {
-      x: (x, target) => {
-        const s = gsap.utils.wrap(-itemWidth, wrapWidth - itemWidth, parseInt(x))
-        return `${s}px`
-      }
+    window.onscroll = function () {
+        // Horizontal Scroll.
+        var y = document.body.getBoundingClientRect().top;
+        page.scrollLeft = -y;
+        
+        // Looping Scroll.
+        var diff = window.scrollY - dummy_x;
+        if (diff > 0) {
+            window.scrollTo(0, diff);
+        }
+        else if (window.scrollY == 0) {
+            window.scrollTo(0, dummy_x);
+        }
+        else if (window.scrollY + window.innerHeight >= document.body.scrollHeight) {
+            window.scrollTo(0, 0); // 맨 위로 돌아가는 동작 추가
+        }
     }
-  })
-} 
-dispose(0)
+    // Adjust the body height if the window resizes.
+    window.onresize = resize;
+    // Initial resize.
+    resize();
+
+    // Reset window-based vars
+    function resize() {
+        var w = page.scrollWidth-window.innerWidth+window.innerHeight;
+        document.body.style.height = w + 'px';
+        
+        dummy_x = last_pane.getBoundingClientRect().left+window.scrollY;
+    }
+
+    // split 쪼개기
+    document.querySelectorAll(".split").forEach((text) => {
+    let splitWrap = text.innerText
+        .split("")
+        .join("</span><span aria-hidden='true'>");
+    text.innerHTML = "<span aria-hidden='true'>" + splitWrap + "</span>";
+    text.setAttribute("aria-label", text.innerText);
+    });
+
+    const load = document.querySelector(".loadLine");
+    const l1 = document.querySelector("._l1");
+    const l2 = document.querySelector("._l2");
+    const l3 = document.querySelector("._l3");
+    const l4 = document.querySelector("._l4");
+    const l5 = document.querySelector("._l5");
+    const l6 = document.querySelector("._l6");
+    const l7 = document.querySelector("._l7");
+    const l8 = document.querySelector("._l8");
+    const l9 = document.querySelector("._l9");
+    const l10 = document.querySelector("._l10");
+    const l11 = document.querySelector("._l11");
+    const l12 = document.querySelector("._l12");
+    const circle = document.querySelector("._c1");
+    const box1 = document.querySelector(".blackBox1");
+    const box2 = document.querySelector(".blackBox2");
+    const box3 = document.querySelector(".whiteBox1");
+    const box4 = document.querySelector(".whiteBox2");
+    // 초기 상태 설정
+    gsap.set(load, {opacity: 1})
+    gsap.set(l6, {attr: {x2: 1500, y2: 0}}); 
+    gsap.set(l7, {attr: {x2: 1920, y2: 0}}); 
+    gsap.set(l10, {attr: {x2: 1500, y2: 0 }});
+    gsap.set(box3, {x:"-200%"})
+    gsap.set(box4, {x:"200%"})
+
+    gsap.set(l1, {attr: {x2: 0, y2: 0}}); 
+    gsap.set(l2, {attr: {x2: 0, y2: 0}}); 
+    gsap.set(l3, {attr: {x2: 0, y2: 0}}); 
+    gsap.set(l4, {attr: {x2: 0, y2: 0}}); 
+    gsap.set(l5, {attr: {x2: 0, y2: 0}});
+    gsap.set(l8, {attr: {x2: 1860, y2: 0}});
+    gsap.set(l9, {attr: {x2: 1740, y2: 0}});
+    gsap.set(l11, {attr: {x1:0, x2:0}});
+    gsap.set(l12, {attr: {y1:0, y2:0}});
+    gsap.set(circle, {autoAlpha:0});
+    
+    
+    // 처음 왔을때 로딩
+    let t4 = gsap.timeline();
+    t4.set(".split", {opacity:0, zIndex:11});
+    t4.set(box1, {opacity:1, });
+    t4.set(box2, {opacity:1});
+    t4.set(".home", {zIndex:1});
+    t4.set(".boxText1", {autoAlpha:0, y:"40%"});
+    t4.set(".boxText2", {autoAlpha:0, y:"-40%"});
+    
+
+    // t4.to(".split",0.1, {opacity:0,delay:1,});
+    t4.to(".boxText1",1, {autoAlpha:1,y:0, delay:0},"1");
+    t4.to(".boxText2",1, {autoAlpha:1,y:0, delay:0},"1");
+    // t4.to(".split",0.1, {opacity:1, zIndex:11,delay:0.9},"1");
+    // t4.to(".split",0.1, {opacity:0, zIndex:1, delay:0.1},"2");
+    t4.to(box1,3, {y:"-200%", ease:"power4.inOut", delay:0.5},"2")
+    t4.to(box2,3, {y:"200%", ease:"power4.inOut", delay:0.5},"2")
+    // t4.to(".split", {opacity:0 },"2");
+
+    t4.to("#page", {opacity:1 },"2");
+    t4.to(".home", {opacity:1,},"2");
+    t4.to(".home", {zIndex:11, delay:1.5},"2");
+    
+    // t4.to(".split span", {
+    //     y: 800,
+    //     duration: 1,
+    //     ease: "back.out(4)",
+    //     stagger: {
+    //         amount: 0.4,
+    //         from: "center",
+    //     },
+    //     delay:0.4
+    // },"2");
 
 
-/*--------------------
-Wheel
---------------------*/
-const handleMouseWheel = (e) => {
-  scrollY -= e.deltaY * 0.9
-}
 
 
-/*--------------------
-Touch
---------------------*/
-let touchStart = 0
-let touchX = 0
-let isDragging = false
-const handleTouchStart = (e) => {
-  touchStart = e.clientX || e.touches[0].clientX
-  isDragging = true
-  $menu.classList.add('is-dragging')
-}
-const handleTouchMove = (e) => {
-  if (!isDragging) return
-  touchX = e.clientX || e.touches[0].clientX
-  scrollY += (touchX - touchStart) * 2.5
-  touchStart = touchX
-}
-const handleTouchEnd = () => {
-  isDragging = false
-  $menu.classList.remove('is-dragging')
-}
+    // home 이동
+    function homeClick() {
+    document.querySelector(".home").addEventListener("click", (e) => {
+        e.preventDefault();
+        
+        gsap.to("#page", {opacity:0,delay:0.5});
+        gsap.to(".home", {opacity:0,delay:0.5});
+        pageForm();
+        setTimeout(() => {
+            window.location.href = "home.html";
+        }, 3500);
+    });
+    }
+    homeClick();
 
+    // home 이동 애니메이션
+    function pageForm(){
+        setTimeout(()=>{
+            // 선 그리기
+            
+            gsap.to(l10,  0.15, {attr: {x1: 0, x2: 1500, y1: 1500}});
+            gsap.to(l7,  0.15, {attr: {x1: 0, x2: 1920, y1: 1920}, delay:0.08}); 
+            gsap.to(l6,  0.15, {attr: {x1: 0, x2:1500, y1:1500},delay:0.16}) 
+            
+            gsap.to(l1,  0.15, {attr: {x2:1500, y2:1500}, delay:0.26});
+            gsap.to(l2, 0.15, {attr: {x2:1740, y2:1740}, delay:0.35});
+            gsap.to(l3, 0.15, {attr: {x2:1860, y2:1860}, delay:0.19});
+            gsap.to(l4, 0.15, {attr: {x2:1920, y2:1920}, delay:0.65});
+            gsap.to(l5, 0.15, {attr: {x2:1500, y2:1500}, delay:0.52});
+            gsap.to(l8, 0.15, {attr: {x1:0, x2:1860, y1:1860}, delay:0.5});
+            gsap.to(l9, 0.15, {attr: {x1:0, x2:1740, y1:1740}, delay:0.6});
+            gsap.to(l11, 0.15, {attr: {x1:0, x2:1920}, delay:0.4});
+            gsap.to(l12, 0.15, {attr: {y1:0, y2:1920}, delay:0.51});
+            gsap.to(circle, 0.15, {autoAlpha:1, delay:0.65});
+            gsap.to(box3, 1, {x: "0%",ease:"expo.out", delay:1.5});
+            gsap.to(box4, 1, {x: "0%",ease:"expo.out", delay:1.5});
+            
+            gsap.to(l1, 1, {delay:1.5, opacity:0.1});
+            gsap.to(l2, 1, {delay:1.5, opacity:0.1});
+            gsap.to(l3, 1, {delay:1.5, opacity:0.1});
+            gsap.to(l4, 1, {delay:1.5, opacity:0.1});
+            gsap.to(l5, 1, {delay:1.5, opacity:0.1});
+            gsap.to(l6, 1, {delay:1.5, opacity:0.1});
+            gsap.to(l7, 1, {delay:1.5, opacity:0.1});
+            gsap.to(l8, 1, {delay:1.5, opacity:0.1});
+            gsap.to(l9, 1, {delay:1.5, opacity:0.1});
+            gsap.to(l10, 1, {delay:1.5, opacity:0.1});
+            gsap.to(l11, 1, {delay:1.5, opacity:0.1});
+            gsap.to(l12, 1, {delay:1.5, opacity:0.1});
+            gsap.to(circle, 1, {delay:1.5, opacity:0.1});
+        },1000)
+    }
 
-/*--------------------
-Listeners
---------------------*/
-$menu.addEventListener('mousewheel', handleMouseWheel)
-
-$menu.addEventListener('touchstart', handleTouchStart)
-$menu.addEventListener('touchmove', handleTouchMove)
-$menu.addEventListener('touchend', handleTouchEnd)
-
-$menu.addEventListener('mousedown', handleTouchStart)
-$menu.addEventListener('mousemove', handleTouchMove)
-$menu.addEventListener('mouseleave', handleTouchEnd)
-$menu.addEventListener('mouseup', handleTouchEnd)
-
-$menu.addEventListener('selectstart', () => { return false })
-
-
-/*--------------------
-Resize
---------------------*/
-window.addEventListener('resize', () => {
-  menuWidth = $menu.clientWidth
-  itemWidth = $items[0].clientWidth
-  wrapWidth = $items.length * itemWidth
-})
-
-
-/*--------------------
-Render
---------------------*/
-const render = () => {
-  requestAnimationFrame(render)
-  y = lerp(y, scrollY, .1)
-  dispose(y)
-  
-  scrollSpeed = y - oldScrollY
-  oldScrollY = y
-  
-  gsap.to($items, {
-    skewX: -scrollSpeed * .2,
-    rotate: scrollSpeed * .01,
-    scale: 1 - Math.min(100, Math.abs(scrollSpeed)) * 0.003
-  })
-}
-render()
-
-</script>
+   
+    </script>
 </html>
