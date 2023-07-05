@@ -78,8 +78,9 @@ body {
   position: absolute;
   top: 0;
   left: 40px;
-  color: #ffd500;
+  
   z-index: 2;
+  pointer-events: none;
   font-size: 5rem;
   text-shadow:
     -1px -1px 0 #000,  
@@ -87,6 +88,13 @@ body {
     -1px 1px 0 #000,
     1px 1px 0 #000;
 }
+.frame.react {
+  color: #91e0ff;
+}
+.frame.vue {
+  color: #fdff70;
+}
+.frame.next {}
 .title {
   position: absolute;
   width: 100%;
@@ -228,7 +236,7 @@ body {
   <div class="menus">
     <div class="menu--wrapper">
       <div class="menu--item">
-        <div class="frame">react</div>
+        <div class="frame react">react</div>
         <div class="background"></div>
         <div class="img"></div>
         <div class="title">
@@ -237,7 +245,7 @@ body {
         </div>
       </div>
       <div class="menu--item">
-        <div class="frame">react</div>
+        <div class="frame react">react</div>
         <div class="img"></div>
         <div class="title">
           <a href="https://github.com/ehcjswo/web2023/blob/main/javascript/game/gameEffect01.html" target="_blank" class="code">code</a>
@@ -245,7 +253,7 @@ body {
         </div>
       </div>
       <div class="menu--item">
-        <div class="frame">vue</div>
+        <div class="frame vue">vue</div>
         <div class="img"></div>
         <div class="title">
           <a href="https://github.com/ehcjswo/web2023/blob/main/javascript/game/gameEffect01.html" target="_blank" class="code">code</a>
@@ -254,7 +262,7 @@ body {
       </div>
   
       <div class="menu--item">
-        <div class="frame">next</div>
+        <div class="frame next">next</div>
         <div class="img"></div>
         <div class="title">
           <a href="https://github.com/ehcjswo/site2023-next01" target="_blank" class="code">code</a>
