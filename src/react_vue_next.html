@@ -38,7 +38,7 @@ body {
   display: flex;
   position: absolute;
   z-index: 1;
-  height: 40%;
+  height: 100%;
   top: 50%;
   left: 0;
   transform: translate(0%, -50%);
@@ -50,11 +50,11 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  width: 30vw;
-  height: 100%;
-  padding: 0 1.5vw;
+  width: 50vw;
+  padding: 15vw 1.5vw;
   overflow: hidden;
-  
+  height: 100%;
+  /* background-color: #fff; */
 }
 .menu--item:hover {
 
@@ -76,8 +76,8 @@ body {
 } */
 .frame {
   position: absolute;
-  top: 0;
-  left: 40px;
+  top: 20%;
+  left: 20%;
   
   z-index: 2;
   pointer-events: none;
@@ -88,12 +88,7 @@ body {
     -1px 1px 0 #000,
     1px 1px 0 #000;
 }
-.frame.react {
-  color: #91e0ff;
-}
-.frame.vue {
-  color: #fdff70;
-}
+
 .frame.next {}
 .title {
   position: absolute;
@@ -112,7 +107,7 @@ body {
 }
 .code,
 .view {
-  border: 1px solid #000;
+  border: 1px solid #ffffff;
   padding: 0px 30px;
   transition: all 0.3s;
   font-weight: 300;
@@ -120,8 +115,16 @@ body {
   color: #fff;
   border-radius: 5px;
   font-family: 'TungstenCompressed';
-  position: relative;
+  position: absolute;
   background-color: #000;
+}
+.code {
+  bottom: 15vh;
+  left: 70%;
+}
+.view {
+  bottom: 15vh;
+  left: 85%;
 }
 
 .code:hover,
@@ -136,16 +139,9 @@ body {
   background-repeat: no-repeat;
   background-size: 150%;
   background-position: 52.5% 20%;
-  position: absolute;
-  transition: filter 0.1s;
+  /* position: absolute; */
+  margin-left: 15vw;
   /* background-color: #333; */
-}
-.background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, #ffffff, #f5dfb6);
-  
 }
 .menu--item:nth-child(n+10):before {
   content: counter(count);
@@ -236,8 +232,7 @@ body {
   <div class="menus">
     <div class="menu--wrapper">
       <div class="menu--item">
-        <div class="frame react">react</div>
-        <div class="background"></div>
+        <div class="frame react">react.js</div>
         <div class="img"></div>
         <div class="title">
           <a href="https://github.com/ehcjswo/site2023-react01-" target="_blank" class="code">code</a>
@@ -245,7 +240,7 @@ body {
         </div>
       </div>
       <div class="menu--item">
-        <div class="frame react">react</div>
+        <div class="frame react">react.js</div>
         <div class="img"></div>
         <div class="title">
           <a href="https://github.com/ehcjswo/site2023-react02-" target="_blank" class="code">code</a>
@@ -253,7 +248,7 @@ body {
         </div>
       </div>
       <div class="menu--item">
-        <div class="frame vue">vue</div>
+        <div class="frame vue">vue.js</div>
         <div class="img"></div>
         <div class="title">
           <a href="https://github.com/ehcjswo/site2023-vue01" target="_blank" class="code">code</a>
@@ -262,15 +257,17 @@ body {
       </div>
   
       <div class="menu--item">
-        <div class="frame next">next</div>
+        <div class="frame next">next.js</div>
         <div class="img"></div>
         <div class="title">
           <a href="https://github.com/ehcjswo/site2023-next01" target="_blank" class="code">code</a>
           <a href="https://dh-next01.netlify.app/" target="_blank" class="view">view</a>
         </div>
       </div>
-
     </div>
+  </div>
+  <div class="home">
+      <a class="homeClick" href="home.html">HOME</a>
   </div>
     
 </body>
