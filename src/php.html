@@ -31,28 +31,109 @@
             width: 200vw;
             height: 100vh;
             overflow:hidden;
-            white-space:nowrap;
+            /* white-space:nowrap; */
             display:flex;
             flex-wrap:nowrap;
             opacity: 1;
-            font-size: 10rem;
-            transform: translateX(0%);
+            /* font-size: 10rem; */
+            /* transform: translateX(-50%); */
             position: relative;
         }
         .pane {
             width: 100vw;
             height: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
         }
-        .pane .img1 {
+        .imgBox {
+            width: 55%;
+            height: 100%;
+            /* transform: translateY(25%); */
+            align-items: center;
+            display: flex;
+        }
+        .imgBox .img1 {
             width: 100%;
             height: 100%;
-            background-image: url(images/note_01.jpg);
+            /* background-image: url(images/note_01.jpg); */
+            align-items: center;
+            display: flex;
             background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        .textBox {
+            width: 45%;
+            padding-right: 10vw;
+            padding-bottom: 3vh;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+        .title {
+            font-size: 10vw;
+            line-height: 0.9;
+            white-space:nowrap;
+            padding-bottom: 3vh;
+            
+        }
+        .desc {
+            word-break: keep-all;
+            font-family: 'TheJamsil';
+            font-weight: 300;
+            padding-bottom: 3vh;
+        }
+        .code,
+        .view {
+        border: 1px solid #ffffff;
+        padding: 0px 30px;
+        transition: all 0.3s;
+        font-weight: 400;
+        font-size: 3rem;
+        color: #fff;
+        border-radius: 5px;
+        font-family: 'TungstenCompressed';
+        /* background-color: #000; */
+        }
+        .code {
+            margin-right: 15px;
+        }
+        .code:hover,
+        .view:hover {
+        background-color: #fff;
+        color: #000;
+        border: 1px solid #fff;
+        }
+        .btn {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+        }
+        .nextBtn {
+            width: 1.5vw;
+            height:100px;
+            background-image: url(images/arrowRight.svg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            color: #fff;
+            /* background-color: #fff; */
             position: absolute;
-            background-size: 20%;
+            right: 1vw;
             top: 50%;
-            /* left: 50%; */
-            /* transform: translate(-50% -50%); */
+            cursor: pointer;
+            z-index: 2;
+        }
+        .prevBtn {
+            width: 1.5vw;
+            height:100px;
+            background-image: url(images/arrowLeft.svg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            color: #fff;
+            position: absolute;
+            left: 1vw;
+            top: 50%;
+            cursor: pointer;
+            z-index: 2;
         }
 
     </style>
@@ -98,9 +179,41 @@
     </div>
     <div id="page">
         <div class="pane">
-            <div class="img1"></div>
+            <div class="nextBtn"></div>
+            <div class="imgBox">
+                <div class="img1"><img src="images/note_01.jpg" alt=""></div>
+            </div>
+            <div class="textBox">
+                <div class="title">
+                    php.js PORTFOLIO<br>webSite
+                </div>
+                <div class="desc">
+                    사람들은 수 많은 여러 종류 화장품, 생필품의 유통 기한을 정확하게 알지 못합니다. 그런 사람들을 위해 해당제품의 유통 기한을 등록하여 남은 날짜를 알려주는 사이트를 팀프로젝트를 통해 만들었습니다. 데이터베이스와의 상호작용, 양식 처리, 세션 관리 등 다양한 웹 개발 작업을 효율적으로 수행 했습니다.
+                </div>
+                <div class="codeView">
+                    <a href="https://github.com/ehcjswo/php2023" target="_blank" class="code">code</a>
+                    <a href="http://ehcjswo1.dothome.co.kr/php/main/main.php" target="_blank" class="view">view</a>
+                </div>
+            </div>
         </div>
-        <div class="pane"><div>2</div></div>
+        <div class="pane">
+            <div class="prevBtn"></div>
+            <div class="imgBox">
+                <div class="img1"><img src="images/note_02.jpg" alt=""></div>
+            </div>
+            <div class="textBox">
+                <div class="title">
+                    php.js PORTFOLIO<br>webSite
+                </div>
+                <div class="desc">
+                    PHP는 강력하고 널리 사용되는 서버 사이드 스크립팅 언어로, 동적인 웹 애플리케이션을 구축하는 데 매우 유용합니다. 사용자들은 직관적이고 사용하기 쉬운 인터페이스를 통해 웹사이트를 탐색하고 상호작용할 수 있습니다.
+                </div>
+                <div class="codeView">
+                    <a href="https://github.com/ehcjswo/php2023" target="_blank" class="code">code</a>
+                    <a href="http://ehcjswo1.dothome.co.kr/php/main/main.php" target="_blank" class="view">view</a>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="home">
         <a class="homeClick" href="home.html">HOME</a>
@@ -110,121 +223,100 @@
 <!-- <script src="script/main.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
 <script>
-    // var page = document.getElementById('page');
-    // var last_pane = page.getElementsByClassName('pane');
-    // last_pane = last_pane[last_pane.length-1];
-    // var dummy_x = null;
+    // button 이동
+    gsap.set(".nextBtn", {autoAlpha:1})
+    gsap.set(".prevBtn", {autoAlpha:0})
+    document.querySelector(".nextBtn").addEventListener("click",()=>{
+        gsap.to("#page", {x:"-50%"})
+        gsap.to(".nextBtn",0.5, {autoAlpha:0})
+        gsap.to(".prevBtn", {autoAlpha:1, delay:0.5})
+    })
+    document.querySelector(".prevBtn").addEventListener("click",()=>{
+        gsap.to("#page", {x:"0%"})
+        gsap.to(".prevBtn",0.5, {autoAlpha:0})
+        gsap.to(".nextBtn", {autoAlpha:1, delay:0.5})
+    })
 
-    // window.onscroll = function () {
-    //     // Horizontal Scroll.
-    //     var y = document.body.getBoundingClientRect().top;
-    //     page.scrollLeft = -y;
-        
-    //     // Looping Scroll.
-    //     var diff = window.scrollY - dummy_x;
-    //     if (diff > 0) {
-    //         window.scrollTo(0, diff);
-    //     }
-    //     else if (window.scrollY == 0) {
-    //         window.scrollTo(0, dummy_x);
-    //     }
-    //     else if (window.scrollY + window.innerHeight >= document.body.scrollHeight) {
-    //         window.scrollTo(0, 0); // 맨 위로 돌아가는 동작 추가
-    //     }
-    // }
-    // // Adjust the body height if the window resizes.
-    // window.onresize = resize;
-    // // Initial resize.
-    // resize();
+    // split 쪼개기
+    document.querySelectorAll(".split").forEach((text) => {
+    let splitWrap = text.innerText
+        .split("")
+        .join("</span><span aria-hidden='true'>");
+    text.innerHTML = "<span aria-hidden='true'>" + splitWrap + "</span>";
+    text.setAttribute("aria-label", text.innerText);
+    });
 
-    // // Reset window-based vars
-    // function resize() {
-    //     var w = page.scrollWidth-window.innerWidth+window.innerHeight;
-    //     document.body.style.height = w + 'px';
-        
-    //     dummy_x = last_pane.getBoundingClientRect().left+window.scrollY;
-    // }
+    const load = document.querySelector(".loadLine");
+    const l1 = document.querySelector("._l1");
+    const l2 = document.querySelector("._l2");
+    const l3 = document.querySelector("._l3");
+    const l4 = document.querySelector("._l4");
+    const l5 = document.querySelector("._l5");
+    const l6 = document.querySelector("._l6");
+    const l7 = document.querySelector("._l7");
+    const l8 = document.querySelector("._l8");
+    const l9 = document.querySelector("._l9");
+    const l10 = document.querySelector("._l10");
+    const l11 = document.querySelector("._l11");
+    const l12 = document.querySelector("._l12");
+    const circle = document.querySelector("._c1");
+    const box1 = document.querySelector(".blackBox1");
+    const box2 = document.querySelector(".blackBox2");
+    const box3 = document.querySelector(".whiteBox1");
+    const box4 = document.querySelector(".whiteBox2");
+    // 초기 상태 설정
+    gsap.set(load, {opacity: 1})
+    gsap.set(l6, {attr: {x2: 1500, y2: 0}}); 
+    gsap.set(l7, {attr: {x2: 1920, y2: 0}}); 
+    gsap.set(l10, {attr: {x2: 1500, y2: 0 }});
+    gsap.set(box3, {x:"-200%"})
+    gsap.set(box4, {x:"200%"})
 
-    // // split 쪼개기
-    // document.querySelectorAll(".split").forEach((text) => {
-    // let splitWrap = text.innerText
-    //     .split("")
-    //     .join("</span><span aria-hidden='true'>");
-    // text.innerHTML = "<span aria-hidden='true'>" + splitWrap + "</span>";
-    // text.setAttribute("aria-label", text.innerText);
-    // });
-
-    // const load = document.querySelector(".loadLine");
-    // const l1 = document.querySelector("._l1");
-    // const l2 = document.querySelector("._l2");
-    // const l3 = document.querySelector("._l3");
-    // const l4 = document.querySelector("._l4");
-    // const l5 = document.querySelector("._l5");
-    // const l6 = document.querySelector("._l6");
-    // const l7 = document.querySelector("._l7");
-    // const l8 = document.querySelector("._l8");
-    // const l9 = document.querySelector("._l9");
-    // const l10 = document.querySelector("._l10");
-    // const l11 = document.querySelector("._l11");
-    // const l12 = document.querySelector("._l12");
-    // const circle = document.querySelector("._c1");
-    // const box1 = document.querySelector(".blackBox1");
-    // const box2 = document.querySelector(".blackBox2");
-    // const box3 = document.querySelector(".whiteBox1");
-    // const box4 = document.querySelector(".whiteBox2");
-    // // 초기 상태 설정
-    // gsap.set(load, {opacity: 1})
-    // gsap.set(l6, {attr: {x2: 1500, y2: 0}}); 
-    // gsap.set(l7, {attr: {x2: 1920, y2: 0}}); 
-    // gsap.set(l10, {attr: {x2: 1500, y2: 0 }});
-    // gsap.set(box3, {x:"-200%"})
-    // gsap.set(box4, {x:"200%"})
-
-    // gsap.set(l1, {attr: {x2: 0, y2: 0}}); 
-    // gsap.set(l2, {attr: {x2: 0, y2: 0}}); 
-    // gsap.set(l3, {attr: {x2: 0, y2: 0}}); 
-    // gsap.set(l4, {attr: {x2: 0, y2: 0}}); 
-    // gsap.set(l5, {attr: {x2: 0, y2: 0}});
-    // gsap.set(l8, {attr: {x2: 1860, y2: 0}});
-    // gsap.set(l9, {attr: {x2: 1740, y2: 0}});
-    // gsap.set(l11, {attr: {x1:0, x2:0}});
-    // gsap.set(l12, {attr: {y1:0, y2:0}});
-    // gsap.set(circle, {autoAlpha:0});
+    gsap.set(l1, {attr: {x2: 0, y2: 0}}); 
+    gsap.set(l2, {attr: {x2: 0, y2: 0}}); 
+    gsap.set(l3, {attr: {x2: 0, y2: 0}}); 
+    gsap.set(l4, {attr: {x2: 0, y2: 0}}); 
+    gsap.set(l5, {attr: {x2: 0, y2: 0}});
+    gsap.set(l8, {attr: {x2: 1860, y2: 0}});
+    gsap.set(l9, {attr: {x2: 1740, y2: 0}});
+    gsap.set(l11, {attr: {x1:0, x2:0}});
+    gsap.set(l12, {attr: {y1:0, y2:0}});
+    gsap.set(circle, {autoAlpha:0});
     
     
-    // // 처음 왔을때 로딩
-    // let t4 = gsap.timeline();
-    // t4.set(".split", {opacity:0, zIndex:11});
-    // t4.set(box1, {opacity:1, });
-    // t4.set(box2, {opacity:1});
-    // t4.set(".home", {zIndex:1});
-    // t4.set(".boxText1", {autoAlpha:0, y:"40%"});
-    // t4.set(".boxText2", {autoAlpha:0, y:"-40%"});
+    // 처음 왔을때 로딩
+    let t4 = gsap.timeline();
+    t4.set(".split", {opacity:0, zIndex:11});
+    t4.set(box1, {opacity:1, });
+    t4.set(box2, {opacity:1});
+    t4.set(".home", {zIndex:1});
+    t4.set(".boxText1", {autoAlpha:0, y:"40%"});
+    t4.set(".boxText2", {autoAlpha:0, y:"-40%"});
     
 
-    // // t4.to(".split",0.1, {opacity:0,delay:1,});
-    // t4.to(".boxText1",1, {autoAlpha:1,y:0, delay:0},"1");
-    // t4.to(".boxText2",1, {autoAlpha:1,y:0, delay:0},"1");
-    // // t4.to(".split",0.1, {opacity:1, zIndex:11,delay:0.9},"1");
-    // // t4.to(".split",0.1, {opacity:0, zIndex:1, delay:0.1},"2");
-    // t4.to(box1,3, {y:"-200%", ease:"power4.inOut", delay:0.5},"2")
-    // t4.to(box2,3, {y:"200%", ease:"power4.inOut", delay:0.5},"2")
-    // // t4.to(".split", {opacity:0 },"2");
+    // t4.to(".split",0.1, {opacity:0,delay:1,});
+    t4.to(".boxText1",1, {autoAlpha:1,y:0, delay:0},"1");
+    t4.to(".boxText2",1, {autoAlpha:1,y:0, delay:0},"1");
+    // t4.to(".split",0.1, {opacity:1, zIndex:11,delay:0.9},"1");
+    // t4.to(".split",0.1, {opacity:0, zIndex:1, delay:0.1},"2");
+    t4.to(box1,3, {y:"-200%", ease:"power4.inOut", delay:0.5},"2")
+    t4.to(box2,3, {y:"200%", ease:"power4.inOut", delay:0.5},"2")
+    // t4.to(".split", {opacity:0 },"2");
 
-    // t4.to("#page", {opacity:1 },"2");
-    // t4.to(".home", {opacity:1,},"2");
-    // t4.to(".home", {zIndex:11, delay:1.5},"2");
+    t4.to("#page", {opacity:1 },"2");
+    t4.to(".home", {opacity:1,},"2");
+    t4.to(".home", {zIndex:11, delay:1.5},"2");
     
-    // t4.to(".split span", {
-    //     y: 800,
-    //     duration: 1,
-    //     ease: "back.out(4)",
-    //     stagger: {
-    //         amount: 0.4,
-    //         from: "center",
-    //     },
-    //     delay:0.4
-    // },"2");
+    t4.to(".split span", {
+        y: 800,
+        duration: 1,
+        ease: "back.out(4)",
+        stagger: {
+            amount: 0.4,
+            from: "center",
+        },
+        delay:0.4
+    },"2");
 
 
 
