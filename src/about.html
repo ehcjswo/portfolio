@@ -346,7 +346,7 @@
         function pageForm(){
             setTimeout(()=>{
                 // 선 그리기
-                
+                gsap.to(".scroll_bottom", {autoAlpha:0})
                 gsap.to(".left", {opacity:0});
                 gsap.to(".right", {opacity:0});
                 gsap.to(l10,  0.15, {attr: {x1: 0, x2: 1500, y1: 1500}});

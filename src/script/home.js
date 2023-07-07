@@ -46,6 +46,7 @@ const subMenu = document.querySelector("#sub_menu");
 
 
 // 초기 상태 설정
+gsap.set("body", {backgroundColor: "#151516"})
 gsap.set(".loading .split", { opacity: 0, y: 0 });
 gsap.set(load, {opacity: 1})
 gsap.set(l1, { opacity:0.1});

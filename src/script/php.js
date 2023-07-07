@@ -61,6 +61,7 @@ gsap.set(circle, {autoAlpha:0});
 
 // 처음 왔을때 로딩
 let t4 = gsap.timeline();
+t4.set("body", {backgroundColor: "#151516"});
 t4.set(".split", {opacity:0, zIndex:11});
 t4.set(box1, {opacity:1, });
 t4.set(box2, {opacity:1});

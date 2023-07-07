@@ -60,6 +60,7 @@ const subMenu = document.querySelector("#sub_menu");
 // 처음 로딩
 function loading(){
   // 초기 상태 설정
+  t4.set("body", {backgroundColor: "#151516"})
   gsap.set(".split", {opacity:1})
   gsap.set(box1, {opacity: 0});
   gsap.set(box2, {opacity: 0});
