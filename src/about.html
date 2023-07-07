@@ -48,6 +48,7 @@
             top: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
+            opacity: 0;
         }
         .scroll_bottom > img {
             /* margin-left: 10px; */
@@ -389,12 +390,12 @@
                 
         
         const animation1 = gsap.timeline({ paused: true });
-        animation1.set(".scroll_bottom", {opacity: 1, scale:1});
         animation1.set(".developer_desc1-1 span", {opacity: 0, scale:0});
         animation1.set(".developer_desc1-2", {opacity: 0, scale:0, y:50});
         animation1.set(".developer_desc1-3", {opacity: 0, scale:0, y:-50});
         animation1.set(".contact_img", {opacity: 1, height: 0});
-        gsap.from(".scroll_bottom",1, {opacity:0, yoyo:1, repeat:-1, ease: "power2.out"})
+        animation1.set(".scroll_bottom", {opacity: 1, delay:3});
+        gsap.to(".scroll_bottom", {duration:1, opacity:1, yoyo:1, repeat:-1, ease: "power2.out", delay:3})
         ScrollTrigger.create({
             animation: animation1,
             trigger: "#con_section1",
