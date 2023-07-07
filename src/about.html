@@ -19,7 +19,8 @@
             width: 40%;
             height: 100%;
             padding: 10px;
-            opacity: 0;
+            /* opacity: 0; */
+            opacity: 1;
         }
         .contact_img {
             width: 38%;
@@ -29,12 +30,30 @@
             background-size: cover;
             /* background-color: #a3a3a3; */
             background-position: center;
+            /* opacity: 0; */
+            opacity: 1;
             position: fixed;
         }
         .right {
             width: 60%;
             position: relative;
-            opacity: 0;
+            /* opacity: 0; */
+            opacity: 1;
+        }
+        .scroll_bottom {
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            font-size: 7rem;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .scroll_bottom > img {
+            /* margin-left: 10px; */
+            height: 4rem;
         }
         .developer {
             width: 60%;
@@ -166,6 +185,7 @@
           </div>
             <div class="split">developer.kdh</div>
         </div>
+        <div class="scroll_bottom">scroll <img src="images/arrow_bottom.svg" alt=""></div>
         <div class="left">
             <div class="contact_img"></div>
         </div>
@@ -268,43 +288,43 @@
         const box4 = document.querySelector(".whiteBox2");
 
         // 초기 상태 설정
-        gsap.set(load, {opacity: 1})
-        gsap.set(l6, {attr: {x2: 1500, y2: 0}}); 
-        gsap.set(l7, {attr: {x2: 1920, y2: 0}}); 
-        gsap.set(l10, {attr: {x2: 1500, y2: 0 }});
-        gsap.set(box3, {x:"-200%"})
-        gsap.set(box4, {x:"200%"})
+        // gsap.set(load, {opacity: 1})
+        // gsap.set(l6, {attr: {x2: 1500, y2: 0}}); 
+        // gsap.set(l7, {attr: {x2: 1920, y2: 0}}); 
+        // gsap.set(l10, {attr: {x2: 1500, y2: 0 }});
+        // gsap.set(box3, {x:"-200%"})
+        // gsap.set(box4, {x:"200%"})
 
-        gsap.set(l1, {attr: {x2: 0, y2: 0}}); 
-        gsap.set(l2, {attr: {x2: 0, y2: 0}}); 
-        gsap.set(l3, {attr: {x2: 0, y2: 0}}); 
-        gsap.set(l4, {attr: {x2: 0, y2: 0}}); 
-        gsap.set(l5, {attr: {x2: 0, y2: 0}});
-        gsap.set(l8, {attr: {x2: 1860, y2: 0}});
-        gsap.set(l9, {attr: {x2: 1740, y2: 0}});
-        gsap.set(l11, {attr: {x1:0, x2:0}});
-        gsap.set(l12, {attr: {y1:0, y2:0}});
-        gsap.set(circle, {autoAlpha:0});
+        // gsap.set(l1, {attr: {x2: 0, y2: 0}}); 
+        // gsap.set(l2, {attr: {x2: 0, y2: 0}}); 
+        // gsap.set(l3, {attr: {x2: 0, y2: 0}}); 
+        // gsap.set(l4, {attr: {x2: 0, y2: 0}}); 
+        // gsap.set(l5, {attr: {x2: 0, y2: 0}});
+        // gsap.set(l8, {attr: {x2: 1860, y2: 0}});
+        // gsap.set(l9, {attr: {x2: 1740, y2: 0}});
+        // gsap.set(l11, {attr: {x1:0, x2:0}});
+        // gsap.set(l12, {attr: {y1:0, y2:0}});
+        // gsap.set(circle, {autoAlpha:0});
 
-        // 처음 왔을때 로딩
-        let t4 = gsap.timeline();
-        t4.set(box1, {opacity:1});
-        t4.set(box2, {opacity:1});
-        t4.set(".home", {zIndex:1});
-        t4.set(".boxText1", {autoAlpha:0, y:200});
-        t4.set(".boxText2", {autoAlpha:0, y:-200});
+        // // 처음 왔을때 로딩
+        // let t4 = gsap.timeline();
+        // t4.set(box1, {opacity:1});
+        // t4.set(box2, {opacity:1});
+        // t4.set(".home", {zIndex:1});
+        // t4.set(".boxText1", {autoAlpha:0, y:200});
+        // t4.set(".boxText2", {autoAlpha:0, y:-200});
         
 
-        t4.to(".left", {opacity:1})
-        t4.to(".right", {opacity:1})
-        t4.to(".boxText1",1, {autoAlpha:1,y:0, delay:0},"1");
-        t4.to(".boxText2",1, {autoAlpha:1,y:0, delay:0},"1");
-        t4.to(box1,3, {y:-1200, ease:"power4.inOut", delay:0.5},"2")
-        t4.to(box2,3, {y:1200, ease:"power4.inOut", delay:0.5},"2")
+        // t4.to(".left", {opacity:1})
+        // t4.to(".right", {opacity:1})
+        // t4.to(".boxText1",1, {autoAlpha:1,y:0, delay:0},"1");
+        // t4.to(".boxText2",1, {autoAlpha:1,y:0, delay:0},"1");
+        // t4.to(box1,3, {y:-1200, ease:"power4.inOut", delay:0.5},"2")
+        // t4.to(box2,3, {y:1200, ease:"power4.inOut", delay:0.5},"2")
 
-        t4.to("#page", {opacity:1 },"2");
-        t4.to(".home", {opacity:1,},"2");
-        t4.to(".home", {zIndex:11, delay:1.5},"2");
+        // t4.to("#page", {opacity:1 },"2");
+        // t4.to(".home", {opacity:1,},"2");
+        // t4.to(".home", {zIndex:11, delay:1.5},"2");
 
 
 
@@ -371,9 +391,12 @@
                 
         
         const animation1 = gsap.timeline({ paused: true });
+        animation1.set(".scroll_bottom", {opacity: 1, scale:1});
         animation1.set(".developer_desc1-1 span", {opacity: 0, scale:0});
         animation1.set(".developer_desc1-2", {opacity: 0, scale:0, y:50});
         animation1.set(".developer_desc1-3", {opacity: 0, scale:0, y:-50});
+        animation1.set(".contact_img", {opacity: 1, height: 0});
+        gsap.from(".scroll_bottom",1, {opacity:0, yoyo:1, repeat:-1, ease: "power2.out"})
         ScrollTrigger.create({
             animation: animation1,
             trigger: "#con_section1",
@@ -384,6 +407,8 @@
             anticipatePin: 1,
             markers: false,
         });
+        animation1.to(".scroll_bottom", {autoAlpha:0, });
+        animation1.to(".contact_img", {opacity: 1, height: "90%"});
         animation1.to(".developer_desc1-1 span", {
             delay:0.2,
             scale:1,

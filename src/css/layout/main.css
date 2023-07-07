@@ -2,7 +2,6 @@ body {
     width: 100%;
     height: 100vh;
     position: relative;
-    /* overflow: hidden; */
     background-color: #151516;
     box-sizing: border-box;
 }
