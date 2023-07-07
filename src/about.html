@@ -19,26 +19,24 @@
             width: 40%;
             height: 100%;
             padding: 10px;
-            /* opacity: 0; */
-            opacity: 1;
+            opacity: 0;
         }
         .contact_img {
             width: 38%;
             height: 90%;
-            margin: 30px 10px;
+            margin: 2vw;
             background-image: url(images/profile_kdh.jpg);
             background-size: cover;
             /* background-color: #a3a3a3; */
             background-position: center;
-            /* opacity: 0; */
-            opacity: 1;
+            opacity: 0;
             position: fixed;
         }
         .right {
             width: 60%;
             position: relative;
-            /* opacity: 0; */
-            opacity: 1;
+            opacity: 0;
+            pointer-events: none;
         }
         .scroll_bottom {
             position: fixed;
@@ -288,43 +286,43 @@
         const box4 = document.querySelector(".whiteBox2");
 
         // 초기 상태 설정
-        // gsap.set(load, {opacity: 1})
-        // gsap.set(l6, {attr: {x2: 1500, y2: 0}}); 
-        // gsap.set(l7, {attr: {x2: 1920, y2: 0}}); 
-        // gsap.set(l10, {attr: {x2: 1500, y2: 0 }});
-        // gsap.set(box3, {x:"-200%"})
-        // gsap.set(box4, {x:"200%"})
+        gsap.set(load, {opacity: 1})
+        gsap.set(l6, {attr: {x2: 1500, y2: 0}}); 
+        gsap.set(l7, {attr: {x2: 1920, y2: 0}}); 
+        gsap.set(l10, {attr: {x2: 1500, y2: 0 }});
+        gsap.set(box3, {x:"-200%"})
+        gsap.set(box4, {x:"200%"})
 
-        // gsap.set(l1, {attr: {x2: 0, y2: 0}}); 
-        // gsap.set(l2, {attr: {x2: 0, y2: 0}}); 
-        // gsap.set(l3, {attr: {x2: 0, y2: 0}}); 
-        // gsap.set(l4, {attr: {x2: 0, y2: 0}}); 
-        // gsap.set(l5, {attr: {x2: 0, y2: 0}});
-        // gsap.set(l8, {attr: {x2: 1860, y2: 0}});
-        // gsap.set(l9, {attr: {x2: 1740, y2: 0}});
-        // gsap.set(l11, {attr: {x1:0, x2:0}});
-        // gsap.set(l12, {attr: {y1:0, y2:0}});
-        // gsap.set(circle, {autoAlpha:0});
+        gsap.set(l1, {attr: {x2: 0, y2: 0}}); 
+        gsap.set(l2, {attr: {x2: 0, y2: 0}}); 
+        gsap.set(l3, {attr: {x2: 0, y2: 0}}); 
+        gsap.set(l4, {attr: {x2: 0, y2: 0}}); 
+        gsap.set(l5, {attr: {x2: 0, y2: 0}});
+        gsap.set(l8, {attr: {x2: 1860, y2: 0}});
+        gsap.set(l9, {attr: {x2: 1740, y2: 0}});
+        gsap.set(l11, {attr: {x1:0, x2:0}});
+        gsap.set(l12, {attr: {y1:0, y2:0}});
+        gsap.set(circle, {autoAlpha:0});
 
-        // // 처음 왔을때 로딩
-        // let t4 = gsap.timeline();
-        // t4.set(box1, {opacity:1});
-        // t4.set(box2, {opacity:1});
-        // t4.set(".home", {zIndex:1});
-        // t4.set(".boxText1", {autoAlpha:0, y:200});
-        // t4.set(".boxText2", {autoAlpha:0, y:-200});
+        // 처음 왔을때 로딩
+        let t4 = gsap.timeline();
+        t4.set(box1, {opacity:1});
+        t4.set(box2, {opacity:1});
+        t4.set(".home", {zIndex:1});
+        t4.set(".boxText1", {autoAlpha:0, y:200});
+        t4.set(".boxText2", {autoAlpha:0, y:-200});
         
 
-        // t4.to(".left", {opacity:1})
-        // t4.to(".right", {opacity:1})
-        // t4.to(".boxText1",1, {autoAlpha:1,y:0, delay:0},"1");
-        // t4.to(".boxText2",1, {autoAlpha:1,y:0, delay:0},"1");
-        // t4.to(box1,3, {y:-1200, ease:"power4.inOut", delay:0.5},"2")
-        // t4.to(box2,3, {y:1200, ease:"power4.inOut", delay:0.5},"2")
+        t4.to(".left", {opacity:1})
+        t4.to(".right", {opacity:1})
+        t4.to(".boxText1",1, {autoAlpha:1,y:0, delay:0},"1");
+        t4.to(".boxText2",1, {autoAlpha:1,y:0, delay:0},"1");
+        t4.to(box1,3, {y:-1200, ease:"power4.inOut", delay:0.5},"2")
+        t4.to(box2,3, {y:1200, ease:"power4.inOut", delay:0.5},"2")
 
-        // t4.to("#page", {opacity:1 },"2");
-        // t4.to(".home", {opacity:1,},"2");
-        // t4.to(".home", {zIndex:11, delay:1.5},"2");
+        t4.to("#page", {opacity:1 },"2");
+        t4.to(".home", {opacity:1,},"2");
+        t4.to(".home", {zIndex:11, delay:1.5},"2");
 
 
 
