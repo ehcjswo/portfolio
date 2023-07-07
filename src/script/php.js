@@ -107,7 +107,7 @@ document.querySelector(".home").addEventListener("click", (e) => {
     pageForm();
     setTimeout(() => {
         window.location.href = "home.html";
-    }, 3500);
+    }, 3700);
 });
 }
 homeClick();

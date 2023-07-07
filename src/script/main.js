@@ -8,7 +8,7 @@ function pageClick() {
       pageOut();
       setTimeout(() => {
         window.location.href = hrefName;
-      }, 4200);
+      }, 4500);
     });
   });
 }
