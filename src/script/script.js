@@ -47,6 +47,7 @@ document.querySelectorAll(".split").forEach((text) => {
     
     // 처음 왔을때 로딩
     let t4 = gsap.timeline();
+    t4.set(".carousel-item", {height:0})
     t4.set(".carousel", {opacity:1})
     t4.set(".split", {opacity:0, zIndex:11});
     t4.set(box1, {opacity:1, });
@@ -64,22 +65,11 @@ document.querySelectorAll(".split").forEach((text) => {
     t4.to(box1,3, {y:"-200%", ease:"power4.inOut", delay:0.5},"2")
     t4.to(box2,3, {y:"200%", ease:"power4.inOut", delay:0.5},"2")
     // t4.to(".split", {opacity:0 },"2");
-
+    
+    t4.to(".carousel-item",1, {height:"clamp(200px, 40vw, 400px)", delay:1},"2");
     t4.to("#page", {opacity:1 },"2");
     t4.to(".home", {opacity:1,},"2");
     t4.to(".home", {zIndex:11, delay:1.5},"2");
-    
-    // t4.to(".split span", {
-    //     y: 800,
-    //     duration: 1,
-    //     ease: "back.out(4)",
-    //     stagger: {
-    //         amount: 0.4,
-    //         from: "center",
-    //     },
-    //     delay:0.4
-    // },"2");
-
 
 
 
