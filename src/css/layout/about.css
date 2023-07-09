@@ -1,0 +1,136 @@
+#contact__wrap {
+    width: 100%;
+    background-color: #151516;
+    color: #fff;
+    display: flex;
+    padding-bottom: 8rem;
+    position: relative;
+    overflow: hidden;
+}
+.left {
+    width: 40%;
+    height: 100%;
+    padding: 10px;
+    opacity: 0;
+}
+.contact_img {
+    width: 38%;
+    height: 90%;
+    margin: 2vw;
+    background-image: url(images/profile_kdh.jpg);
+    background-size: cover;
+    /* background-color: #a3a3a3; */
+    background-position: center;
+    opacity: 0;
+    position: fixed;
+}
+.right {
+    width: 60%;
+    position: relative;
+    opacity: 0;
+    pointer-events: none;
+}
+.scroll_bottom {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 7rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+}
+.scroll_bottom > img {
+    /* margin-left: 10px; */
+    height: 4rem;
+}
+.developer {
+    width: 60%;
+    font-size: 16vw;
+    position: fixed;
+    text-align: center;
+    line-height: 1;
+    font-family: 'Bebas Neue';
+}
+.developer_desc {
+    font-family: 'ChosunNm';
+    font-size: 22px;
+}
+#con_section1 .developer_desc {
+    /* margin-top: 230px; */
+    padding-top: 230px;
+    text-align: center;
+}
+.developer_desc1-1 {
+    font-size: 2.3rem;
+}
+.developer_desc1-2 {
+    font-size: 1.5rem;
+    margin-top: 30px;
+}
+.developer_desc1-3 {
+    margin-top: 50px;
+    font-size: 2rem;
+    color: #c8c8c8;
+}
+#con_section2 .developer_desc {
+    margin-top: 300px;
+    font-weight: 500;
+    padding-left: 6rem;
+    
+}
+.section {
+    height: 20vh;
+    padding: 0 3vw;
+    min-width: 300px;
+    min-height: 400px;
+    padding-top: 50px;
+}
+#con_section3 .developer_desc {
+    font-family: 'TungstenCompressed';
+    font-size: 15rem;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 15rem;
+    text-align: center;
+}
+#con_section4 .developer_desc {
+    font-family: 'TungstenCompressed';
+    font-size: 11rem;
+    line-height: 0.8;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+#con_section5 .developer_desc {
+    text-align: center;
+}
+.developer_desc5-1 {
+    font-family: 'Bebas Neue';
+    text-align: center;
+    font-size: 5rem;
+}
+.developer_desc5-2 {
+    font-family: 'TheJamsil';
+    font-weight: 300;
+}
+.developer_desc5-3 {
+    font-family: 'TheJamsil';
+    font-weight: 300;
+}
+.developer_desc5-4 {
+    font-family: 'TheJamsil';
+    font-weight: 300;
+}
+body::-webkit-scrollbar {
+    width: 0.1px;  /* 스크롤바의 너비 */
+}
+
+body::-webkit-scrollbar-track {
+    background-color: transparent;  /* 스크롤바 트랙의 배경색 */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: transparent;  /* 스크롤바 썸의 배경색 */
+}
