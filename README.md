@@ -11,7 +11,7 @@ View : https://kdh-portfolio.netlify.app/
 🎈 Site Portfolio 
 <br>
 
-웹표준 사이트 : [Site](https://ehcjswo.github.io/web2023/site/site1/index.html){:target="_blank"} or [git](https://ehcjswo.github.io/web2023/site/site1/index.html){:target="_blank"}
+웹표준 사이트 : [Site](https://ehcjswo.github.io/web2023/site/site1/index.html){: target="_blank"} or [git](https://ehcjswo.github.io/web2023/site/site1/index.html)
 
 PHP 블로그 : 
 
