@@ -48,8 +48,8 @@ Next.js 사이트 : Chef Info Site [Site](https://dh-next01.netlify.app/) 💡 [
 🔧 사용 스택
 vite(https://ko.vitejs.dev/) 를 사용하여 사이트를 번들링하고 관리합니다.<br>
 gsap(https://greensock.com/gsap) 를 이용하여 패럴랙스 효과를 줍니다.<br>
-lenis(https://lenis.studiofreight.com/) 를 이용하여 스므스 효과를 구현합니다.<br><br><br>
-netlify(https://www.netlify.com/) 를 통해 사이트를 배포합니다.
-git(https://github.com/) 을 사용하여 파일을 관리합니다.
-HTML, SCSS 기반으로 웹사이트의 기본 레이아웃 설계합니다.
+lenis(https://lenis.studiofreight.com/) 를 이용하여 스므스 효과를 구현합니다.<br>
+netlify(https://www.netlify.com/) 를 통해 사이트를 배포합니다.<br>
+git(https://github.com/) 을 사용하여 파일을 관리합니다.<br>
+HTML, SCSS 기반으로 웹사이트의 기본 레이아웃 설계합니다.<br><br><br>
 
