@@ -11,33 +11,36 @@ View : https://kdh-portfolio.netlify.app/
 🎈 Site Portfolio 
 <br>
 
-웹표준 사이트 : [Site](https://ehcjswo.github.io/web2023/site/site1/index.html) ✨ [git](https://ehcjswo.github.io/web2023/site/site1/index.html)
+웹표준 사이트 : [Site](https://ehcjswo.github.io/web2023/site/site1/index.html) 💡 [github](https://ehcjswo.github.io/web2023/site/site1/index.html)
 
-PHP 블로그 : 
+PHP 블로그 : [github](https://github.com/ehcjswo/php-blog)
 
-PHP 팀프로젝트 : 
-
-클론 사이트 : 
+PHP 팀프로젝트 : [github](https://github.com/ehcjswo/php-team)
 
 
 
 
-💛 React Portfolio 💛
-React 사이트 : Mordern Art ✨깃허브 ✨사이트
-
-React 사이트 : Youtube API ✨깃허브 ✨사이트
-
-Vue.js 사이트 : Mordern Art ✨깃허브 ✨사이트
-
-Next.js 사이트 : Mordern Art ✨깃허브 ✨사이트
-
-Next.js 사이트 : Car Showcase ✨깃허브 ✨사이트
 
 
+🎁 React Portfolio 
+
+React 사이트 : Chef Info Site [Site](https://dh2023-react01.netlify.app/) 💡 [github](https://github.com/ehcjswo/site2023-react01-)
+
+React 사이트 : Copy Site [Site](https://dh2023-react02.netlify.app) 💡 [github](https://github.com/ehcjswo/site2023-react02-)
+
+React 사이트 : Youtube API [Site](https://zesty-sunburst-3c2cfe.netlify.app/) 💡 [github](https://github.com/ehcjswo/site2023-youtube01)
+
+Vue.js 사이트 : Chef Info Site [Site](https://dh2023-vue01.netlify.app/) 💡 [github](https://github.com/ehcjswo/site2023-vue01)
+
+Next.js 사이트 : Chef Info Site [Site](https://dh-next01.netlify.app/) 💡 [github](https://github.com/ehcjswo/site2023-next01)
 
 
-💚 Study Site 💚
-✨깃허브 ✨사이트
+
+
+
+🎠 Study Site 
+
+[Site]https://ehcjswo.github.io/web2023/
 
 
 
@@ -49,20 +52,4 @@ lenis(https://lenis.studiofreight.com/) 를 이용하여 스므스 효과를 구
 netlify(https://www.netlify.com/) 를 통해 사이트를 배포합니다.
 git(https://github.com/) 을 사용하여 파일을 관리합니다.
 HTML, SCSS 기반으로 웹사이트의 기본 레이아웃 설계합니다.
-⚙️ 프로젝트 실행
-vite를 설치합니다. npm create vite@latest
-gsap를 설치합니다. npm install gsap
-lenis를 설치합니다. npm install @studio-freight/lenis
-vite를 설치 후 환경 설정을 합니다. vite.config.js파일을 만들고 다음과 같이 작성합니다.
-export default {
-  root: "src",
-  build: {
-    outDir: "../public",
-  },
-};
-📸 상세
-portSub
 
-portSub2
-
-portEnd
