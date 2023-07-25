@@ -15,7 +15,7 @@ View : https://kdh-portfolio.netlify.app/
 
 PHP 블로그 : [Site](http://ehcjswo123.dothome.co.kr/main/main.php) 💡 [github](https://github.com/ehcjswo/php-blog)
 
-PHP 팀프로젝트 : [github](https://github.com/ehcjswo/php-team)
+PHP 팀프로젝트 : [Site](http://ehcjswo123.dothome.co.kr/php2/main/main.php) 💡 [github](https://github.com/ehcjswo/php-team)
 
 <br><br>
 
