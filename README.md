@@ -46,6 +46,7 @@ Next.js 사이트 : Chef Info Site [Site](https://dh-next01.netlify.app/) 💡 [
 
 
 🔧 사용 스택
+
 vite(https://ko.vitejs.dev/) 를 사용하여 사이트를 번들링하고 관리합니다.<br>
 gsap(https://greensock.com/gsap) 를 이용하여 패럴랙스 효과를 줍니다.<br>
 lenis(https://lenis.studiofreight.com/) 를 이용하여 스므스 효과를 구현합니다.<br>
