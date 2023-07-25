@@ -40,7 +40,7 @@ Next.js 사이트 : Chef Info Site [Site](https://dh-next01.netlify.app/) 💡 [
 
 🎠 Study Site 
 
-[Site]https://ehcjswo.github.io/web2023/
+[Site](https://ehcjswo.github.io/web2023)
 
 <br><br>
 
