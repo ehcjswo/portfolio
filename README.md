@@ -3,7 +3,6 @@
 🏆 포트폴리오 사이트 만들기 프로젝트
 
 <img src="https://raw.githubusercontent.com/ehcjswo/portfolio/main/src/images/gitImg02.jpg" />
-<br><br>
 View : https://kdh-portfolio.netlify.app/
 <br>
 <br>
@@ -12,9 +11,9 @@ View : https://kdh-portfolio.netlify.app/
 🎈 Site Portfolio 
 <br>
 
-웹표준 사이트 : [view](https://ehcjswo.github.io/web2023/site/site1/index.html) [git](https://ehcjswo.github.io/web2023/site/site1/index.html)
+웹표준 사이트 : [Site](https://ehcjswo.github.io/web2023/site/site1/index.html) or [git](https://ehcjswo.github.io/web2023/site/site1/index.html)
 
-PHP 블로그 
+PHP 블로그 : 
 
 PHP 팀프로젝트 : 
 
