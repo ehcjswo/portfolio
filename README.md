@@ -1,25 +1,20 @@
 # portfolio
 
-🏆포트폴리오 사이트 만들기 프로젝트
+🏆 포트폴리오 사이트 만들기 프로젝트
 
-<img src="https://raw.githubusercontent.com/ehcjswo/portfolio/main/src/images/gitImg01.jpg" />
 <img src="https://raw.githubusercontent.com/ehcjswo/portfolio/main/src/images/gitImg02.jpg" />
 <br><br>
 View : https://kdh-portfolio.netlify.app/
+<br>
 
+🎈 Site Portfolio 
+웹표준 사이트 : [view](https://ehcjswo.github.io/web2023/site/site1/index.html) [git](https://ehcjswo.github.io/web2023/site/site1/index.html)
 
- Main Portfolio 
-작업물들을 모아놓은 포트폴리오입니다. ✨깃허브 ✨사이트
+PHP 블로그 
 
+PHP 팀프로젝트 : 
 
-🧡 Site Portfolio 🧡
-웹표준 사이트 ✨깃허브 ✨사이트
-
-PHP 블로그 ✨깃허브 ✨사이트
-
-PHP 팀프로젝트 : 하루 한 지문 ✨깃허브 ✨사이트
-
-클론 사이트 : 이마트 24 ✨깃허브 ✨사이트
+클론 사이트 : 
 
 
 
